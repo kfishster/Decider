@@ -40,7 +40,7 @@ $query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE 
   else
   {
     foreach ($rows as $event) {
-      echo '<li>'.$event['title'].'</li>';
+      echo '<li>'.$event['Title'].'</li>';
     }
   }
 
