@@ -11,15 +11,17 @@
 
 
 <div class="container">
-  <h1>Hello</h1>
-  <p>
+  <h1>Hey, 
 <?php
 
 include('./scripts/database_connection.php');
 
 $id = $_POST['id'];
 $email = $_POST['email'];
+$name = $_POST['name'];
+$nameArray = explode(' ', $name);
 
+echo $nameArray[0].'</h1><p>';
 
 $query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE FBid = ' . $id;
 

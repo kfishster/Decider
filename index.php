@@ -48,8 +48,9 @@
         	FB.api('/me', function(response) {
         		ID = response.id;
         		email = response.email;
+        		name = response.name;
         		
-        		$('#inset_form').html('<form action="./userPage.php" name="send" method="post" style="display:none;"><input type="text" name="id" value="' + ID + '" /><input type="text" name="email" value="' + email + '" /></form>');
+        		$('#inset_form').html('<form action="./userPage.php" name="send" method="post" style="display:none;"><input type="text" name="id" value="' + ID + '" /><input type="text" name="email" value="' + email + '" /><input type="text" name="name" value="' + name + '" /></form>');
     			document.forms['send'].submit();
 
         	}, { perms: 'email' });
