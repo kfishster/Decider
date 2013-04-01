@@ -1,6 +1,6 @@
 
 <h3>Create a new event</h3>
-<form class="form-horizontal" id="submitNewEvent">
+<form class="form-horizontal" id="submitEvent">
   <div class="control-group">
     <label class="control-label" for="inputEmail">Title</label>
     <div class="controls">

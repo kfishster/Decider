@@ -137,24 +137,3 @@ $('.openEvent').click(function(){
 </html>
 
 
-
-    
-  $("#signIn").submit(function(event) {
-      event.preventDefault();
-      
-      var $form = $( this ),
-      
-      email = $form.find( 'input[name="email"]' ).val(),
-      pass = $form.find( 'input[name="password"]' ).val(),
-      url = $form.attr( 'action' ); 
-    
-      $.post(url, { email:email, password:pass } , function(data) {
-        if(data == "T"){window.location = "./account.php";}
-        else {
-          $("#wrong").slideDown();
-
-        }
-      });
-
-  });
-
