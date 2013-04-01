@@ -76,7 +76,7 @@ echo $nameArray[0].'!';
       </ul>
     </div>
     <div class="span8">
-      <!--Body content-->
+      <h4>Click on an event on the left sidebar to see what all the fuss is about.</h4>
     </div>
   </div>
 </div>
