@@ -29,6 +29,7 @@ echo $nameArray[0].'!';
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span4">
+      <div class="well">
       <ul class="nav nav-list">
         <li class="nav-header">My Events</li>
 
@@ -75,8 +76,10 @@ echo $nameArray[0].'!';
 
       </ul>
     </div>
-    <div class="span8">
-      <h4>Click on an event on the left sidebar to see what all the fuss is about.</h4>
+  </div>
+    <div class="span8" id="eventContent">
+      <h4>Click on an event on the left sidebar to see what all the fuss is about.</h4><br><br><p>Remember that thing that you wanted to go to? Yea, that one. Well, you still haven't decided what you're
+      going to be doing. Maybe you should make a new event for that and invite all your friends!</p>
     </div>
   </div>
 </div>
