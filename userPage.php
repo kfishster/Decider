@@ -25,7 +25,7 @@ $nameArray = explode(' ', $name);
 echo $nameArray[0].'!';
 ?>
 </h1>
-</div>
+
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span4">
@@ -79,6 +79,7 @@ echo $nameArray[0].'!';
       <!--Body content-->
     </div>
   </div>
+</div>
 </div>
 </div>
 
