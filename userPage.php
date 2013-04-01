@@ -3,7 +3,7 @@
 <head>
 	<script src="bootstrap/js/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.js"></script>
-<title>Oh hai</title>
+<title>Decidr/title>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
@@ -12,8 +12,8 @@
 
 
 
-<div class="container" style="text-align: center;">
-  <h1>Hey, 
+<div class="container">
+  <h1 style="text-align: center;">Hey, 
 <?php
 
 
@@ -74,7 +74,7 @@ echo $nameArray[0].'!';
 
 ?>
     <li class="nav-header"></li>
-     <li><a href="#"><b>+ Create a new event</b></a></li>
+     <li><a id="newEvent"><b>+ Create a new event</b></a></li>
       </ul>
     </div>
   </div>
@@ -86,6 +86,20 @@ echo $nameArray[0].'!';
 </div>
 </div>
 </div>
+
+<script type="text/javascript">
+
+$('#newEvent').click(function(){
+
+  $('#eventContent').fadeOut("slow");
+  $('#eventContent').load('newEventForm.php', function(){
+
+    $('#eventContent').fadeIn("slow");
+  });
+
+});
+
+</script>
 
 </body>
 </html>
