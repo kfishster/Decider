@@ -12,7 +12,7 @@
 
 
 
-<div class="container">
+<div class="container" style="align: center;">
   <h1>Hey, 
 <?php
 
@@ -25,7 +25,7 @@ $nameArray = explode(' ', $name);
 echo $nameArray[0].'!';
 ?>
 </h1>
-
+<br>
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span4">
@@ -74,7 +74,7 @@ echo $nameArray[0].'!';
 
 ?>
     <li class="nav-header"></li>
-     <li><a href="#">Create a new event</a></li>
+     <li><a href="#"><b>+ Create a new event</b></a></li>
       </ul>
     </div>
   </div>
