@@ -12,7 +12,7 @@
 
 
 
-<div class="container">
+
   <h1>Hey, 
 <?php
 
@@ -81,7 +81,6 @@ echo $nameArray[0].'!';
   </div>
 </div>
 
-</div>
 
 </body>
 </html>
