@@ -3,7 +3,7 @@
 <head>
 	<script src="bootstrap/js/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.js"></script>
-<title>Oh hai</title>
+<title>Decidr</title>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -88,7 +88,7 @@
     <div class="container">
 
       <div class="masthead">
-        <h3 class="muted">Project name</h3>
+        <h3 class="muted">Decidr</h3>
       </div>
       
      
