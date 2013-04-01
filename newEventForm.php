@@ -15,7 +15,7 @@ $('#submitEvent').submit(function(event){
     event.preventDefault();
     var form = $(this);
 
-    title = $form.find( 'input[name="title"]' ).val(),
+    title = form.find( 'input[name="title"]' ).val(),
     id = $('#getUserID').attr('userID');
 
     $.post('./scripts/addEvent.php', {title: title, userID: id}, function (data){
