@@ -13,9 +13,9 @@
 <div class="container"><h1>
 <?php
 
-$id = $_POST('id');
+$id = $_POST['id'];
 
-echo strval($id);
+echo $id;
 
 ?>
 
