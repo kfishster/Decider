@@ -13,8 +13,10 @@
 <div class="container"><button class="btn btn-info">Testing FB Login</button></div>
 
 <div id="fb-root"></div>
+<div id="inset_form"></div>
 
 <script>
+
   // Additional JS functions here
   window.fbAsyncInit = function() {
     FB.init({
@@ -41,7 +43,16 @@
   function login() {
     FB.login(function(response) {
         if (response.authResponse) {
-            testAPI();
+
+        	var ID = 0;
+        	FB.api('/me', function(response) {
+        		ID = response.id;
+        		
+        		$('#inset_form').html('<form action="./userPage.php" name="send" method="post" style="display:none;"><input type="text" name="id" value="' + ID + '" /></form>');
+    			document.forms['send'].submit();
+    			
+        	});
+           	
         } else {
             // cancelled
         }
