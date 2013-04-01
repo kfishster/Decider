@@ -8,6 +8,8 @@
 <body>
 
 
+<button class="btn btn-info">Testing FB Login</button>
+
 <div id="fb-root"></div>
 
 <script>
@@ -49,6 +51,8 @@
     FB.api('/me', function(response) {
         console.log('Good to see you, ' + response.name + '.');
     });
+
+    $('button').click(function(){ login();  });
 }
 </script>
 
