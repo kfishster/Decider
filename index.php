@@ -8,7 +8,7 @@
 <body>
 
 
-<button class="btn btn-info">Testing FB Login</button>
+<div class="container"><button class="btn btn-info">Testing FB Login</button></div>
 
 <div id="fb-root"></div>
 
