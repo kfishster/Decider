@@ -30,8 +30,8 @@ echo $nameArray[0].'!';
   <div class="row-fluid">
     <div class="span4">
       <div class="well">
-      <ul class="nav nav-list">
-        <li class="nav-header">My Events</li>
+      <ul class="nav nav-list" id="eventList">
+        <li class="nav-header" id="getUserID" userID="<?php global $id; echo $id;?>">My Events</li>
 
 <?php
 
@@ -117,7 +117,44 @@ $('.openEvent').click(function(){
 
 });
 
+  $('#submitEvent').submit(function(event){
+    event.preventDefault();
+    var form = $(this);
+
+    title = $form.find( 'input[name="title"]' ).val(),
+    id = $('#getUserID').attr('userID');
+
+    $.post('./scripts/addEvent.php', {title: title, userID: id}, function (data){
+
+      $('#eventList').append('<li><a class="openEvent" eventID="' + data + '">' + title + '</a></li>');
+    });
+
+  });
+
 </script>
 
 </body>
 </html>
+
+
+
+    
+  $("#signIn").submit(function(event) {
+      event.preventDefault();
+      
+      var $form = $( this ),
+      
+      email = $form.find( 'input[name="email"]' ).val(),
+      pass = $form.find( 'input[name="password"]' ).val(),
+      url = $form.attr( 'action' ); 
+    
+      $.post(url, { email:email, password:pass } , function(data) {
+        if(data == "T"){window.location = "./account.php";}
+        else {
+          $("#wrong").slideDown();
+
+        }
+      });
+
+  });
+

@@ -1,25 +1,12 @@
 
 <h3>Create a new event</h3>
-<br>
-<form class="form-horizontal">
+<form class="form-horizontal" id="submitNewEvent">
   <div class="control-group">
-    <label class="control-label" for="inputEmail">Email</label>
+    <label class="control-label" for="inputEmail">Title</label>
     <div class="controls">
-      <input type="text" id="inputEmail" placeholder="Email">
+      <input type="text" id="inputTitle" placeholder="Title">
     </div>
   </div>
-  <div class="control-group">
-    <label class="control-label" for="inputPassword">Password</label>
-    <div class="controls">
-      <input type="password" id="inputPassword" placeholder="Password">
-    </div>
-  </div>
-  <div class="control-group">
-    <div class="controls">
-      <label class="checkbox">
-        <input type="checkbox"> Remember me
-      </label>
-      <button type="submit" class="btn">Sign in</button>
-    </div>
-  </div>
+  <button type="submit" class="btn">Create</button>
 </form>
+
