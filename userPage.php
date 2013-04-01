@@ -21,9 +21,7 @@ $email = $_POST['email'];
 $name = $_POST['name'];
 $nameArray = explode(' ', $name);
 
-echo $id, $email, $name;
-
-echo $nameArray[0].'</h1><p>';
+echo $nameArray[0].'!</h1><p>';
 
 $query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE FBid = ' . $id;
 
