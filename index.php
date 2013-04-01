@@ -96,7 +96,7 @@
       <!-- Jumbotron -->
       <div class="jumbotron">
         <h1>Join your friends' events!</h1>
-        <p class="lead">Login to Decidr with Facebook to coordinate your hang outs and meet ups!</p>
+        <p class="lead">Login to Decidr to coordinate your hang outs and meet ups!</p>
         <a class="btn btn-large btn-success" id="loginFB">Login with Facebook</a>
       </div>
 
