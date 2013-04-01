@@ -53,7 +53,7 @@
     });
 }
 
-$('button').click(function(){ login();  });
+$('button').click(function(){ alert('hi');  });
 </script>
 
 <script src="bootstrap/js/jquery.js"></script>
