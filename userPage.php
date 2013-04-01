@@ -33,6 +33,8 @@ $query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE 
     $rows[$i] = $row;
   }
 
+  var_dump($rows);
+
   if(!isset($rows))
   {
     //Put into database
