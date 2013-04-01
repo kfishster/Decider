@@ -91,11 +91,15 @@ echo $nameArray[0].'!';
 
 $('#newEvent').click(function(){
 
-  $('#eventContent').fadeOut("slow");
-  $('#eventContent').load('newEventForm.php', function(){
+  $('#eventContent').fadeOut("slow", function(){
 
-    $('#eventContent').fadeIn("slow");
+      $(this).load('newEventForm.php', function(){
+
+      $(this).fadeIn("slow");
+    });
+
   });
+  
 
 });
 
