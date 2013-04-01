@@ -9,8 +9,49 @@
 </head>
 <body>
 
+<body>
 
-<div class="container"><button class="btn btn-info">Testing FB Login</button></div>
+    <div class="container">
+
+      
+     
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>Join your friends' events!</h1>
+        <p class="lead">Login to Decidr with Facebook to coordinate your hang outs and meet ups!</p>
+        <a class="btn btn-large btn-success" id="loginFB">Login with Facebook</a>
+      </div>
+
+      <hr>
+
+      <!-- Example row of columns -->
+      <div class="row-fluid">
+        <div class="span4">
+          <h2>iPhone</h2>
+          <p>An iPhone app is going to be made in a little while!</p>
+          <p><a class="btn" href="#">Marketplace link &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2>Android</h2>
+          <p>An Android app is going to be made in a little while! </p>
+          <p><a class="btn" href="#">Marketplace link &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2>Windows Phone 8</h2>
+          <p>An Windows Phone app is going to be made in a little while!</p>
+          <p><a class="btn" href="#">Marketplace link &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="footer">
+        <p>&copy; Very Good Company 2013</p>
+      </div>
+
+    </div> <!-- /container -->
+
 
 <div id="fb-root"></div>
 <div id="inset_form"></div>
@@ -69,7 +110,7 @@
 	}
 
 	$(document).ready(function(){
-		$('button').click(function(){ 
+		$('#loginFB').click(function(){ 
 			login();  
 		});
 	});
