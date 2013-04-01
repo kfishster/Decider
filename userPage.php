@@ -10,7 +10,8 @@
 <body>
 
 
-<div class="container"><h1>Hello</h1>
+<div class="container">
+  <h1>Hello</h1>
   <p>
 <?php
 
@@ -35,7 +36,6 @@ $query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE 
     //Put into database
     $query = 'INSERT INTO User VALUES('.$id.', "'.$email.'");';
     $result = mysql_query($query) or die(mysql_error());
-    echo 
   }
   else
   {
@@ -46,16 +46,9 @@ $query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE 
 
 
 
-echo $id;
-
 ?>
 </p>
 </div>
-
-
-
-
-
 
 </body>
 </html>
