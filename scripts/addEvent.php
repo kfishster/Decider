@@ -7,13 +7,13 @@
   $userID = $_POST['userID'];
 
 
-  $query = 'INSERT INTO Event VALUES(NULL, '.$id.', "'.$title.'", NULL)';  
+  $query = 'INSERT INTO Event VALUES(NULL, '.$userID.', "'.$title.'", NULL)';  
   
   echo $query;
 
   $result = mysql_query($query) or die(mysql_error());
 
-  $query = 'SELECT EventID FROM Event WHERE Admin = '.$id.' AND Title = "'.$title.'";';  
+  $query = 'SELECT EventID FROM Event WHERE Admin = '.$userID.' AND Title = "'.$title.'";';  
 
   echo $query;
 
@@ -23,7 +23,7 @@
       $rows[$i] = $row;
     }
 
-  $query = 'INSERT INTO Participates VALUES('.$id.', '.$rows[0]['EventID'].')';
+  $query = 'INSERT INTO Participates VALUES('.$userID.', '.$rows[0]['EventID'].')';
   
   echo $query;
 
