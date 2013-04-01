@@ -51,9 +51,9 @@
     FB.api('/me', function(response) {
         console.log('Good to see you, ' + response.name + '.');
     });
-
-    $('button').click(function(){ login();  });
 }
+
+$('button').click(function(){ login();  });
 </script>
 
 <script src="bootstrap/js/jquery.js"></script>
