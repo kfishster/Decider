@@ -18,7 +18,7 @@ include('./scripts/database_connection.php');
 $id = $_POST['id'];
 $email = $_POST['email'];
 
-$query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Has WHERE FBid = "{id}"';
+$query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Has WHERE FBid = "{$id}"';
       
   $result = mysql_query($query) or die(mysql_error());
 
@@ -27,7 +27,7 @@ $query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Has WHERE FBid = "{
     $rows[$i] = $row;
   }
 
-  if(!isset($rows[i]))
+  if(!isset($rows))
   {
     //Put into database
     $query = 'INSERT INTO User VALUES({$id}, {$email})';
