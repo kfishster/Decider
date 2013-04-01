@@ -126,7 +126,7 @@ $('.openEvent').click(function(){
 
     $.post('./scripts/addEvent.php', {title: title, userID: id}, function (data){
 
-      $('#eventList').append('<li><a class="openEvent" eventID="' + data + '">' + title + '</a></li>');
+      $('#eventList').append('<li><a class="openEvent" eventID="' + data + '">' + title + '</a></li>').slideDown();
     });
 
   });
