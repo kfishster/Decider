@@ -67,6 +67,8 @@ echo $nameArray[0].'!';
       $rows[$i] = $row;
     }
 
+    var_dump($rows);
+
     foreach ($rows as $event) {
       echo '<li><a class="openEvent" eventID="'.$rows['EventID'].'">'.$event['Title'].'</a></li>';
     }
