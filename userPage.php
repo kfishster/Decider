@@ -10,20 +10,44 @@
 <body>
 
 
+
+
 <div class="container">
   <h1>Hey, 
 <?php
 
-include('./scripts/database_connection.php');
 
 $id = $_POST['id'];
 $email = $_POST['email'];
 $name = $_POST['name'];
 $nameArray = explode(' ', $name);
 
-echo $nameArray[0].'!</h1><p>';
+echo $nameArray[0].'!';
+?>
+</h1>
 
- $query = 'SELECT * FROM User WHERE FBid = ' . $id;
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <ul class="nav nav-list">
+        <li class="nav-header">List header</li>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Library</a></li>
+    
+        </ul>
+    </div>
+    <div class="span10">
+      <!--Body content-->
+    </div>
+  </div>
+</div>
+
+<?php
+
+  include('./scripts/database_connection.php');
+  global $id, $email, $name;
+
+  $query = 'SELECT * FROM User WHERE FBid = ' . $id;
 
       
   $result = mysql_query($query) or die(mysql_error());
@@ -60,7 +84,7 @@ echo $nameArray[0].'!</h1><p>';
 
 
 ?>
-</p>
+
 </div>
 
 </body>
