@@ -1,6 +1,8 @@
 <?php
 
-  include('./scripts/database_connection.php');
+  include('database_connection.php');
+
+  echo 'asd';
 
   $title = $_POST['title'];
   $userID = $_POST['userID'];
