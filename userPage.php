@@ -10,7 +10,8 @@
 <body>
 
 
-<div class="container"><h1>
+<div class="container"><h1>Hello</h1>
+  <p>
 <?php
 
 include('./scripts/database_connection.php');
@@ -19,9 +20,8 @@ $id = $_POST['id'];
 $email = $_POST['email'];
 
 
-$query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Has WHERE FBid = ' . $id;
+$query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE FBid = ' . $id;
 
-echo $query;
       
   $result = mysql_query($query) or die(mysql_error());
 
@@ -34,13 +34,14 @@ echo $query;
   {
     //Put into database
     $query = 'INSERT INTO User VALUES('.$id.', "'.$email.'");';
-    echo $query;
-
     $result = mysql_query($query) or die(mysql_error());
+    echo 
   }
   else
   {
-    //show all events
+    foreach ($rows as $event) {
+      echo '<li>'.$event['title'].'</li>';
+    }
   }
 
 
@@ -48,8 +49,8 @@ echo $query;
 echo $id;
 
 ?>
-
-</h1></div>
+</p>
+</div>
 
 
 
