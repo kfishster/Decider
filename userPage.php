@@ -12,7 +12,7 @@
 
 
 
-<div class="container" style="align: center;">
+<div class="container" style="text-align: center;">
   <h1>Hey, 
 <?php
 
