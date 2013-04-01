@@ -2,12 +2,12 @@
 
   include('database_connection.php');
 
-  echo 'asd';
 
   $title = $_POST['title'];
   $userID = $_POST['userID'];
 
-
+  echo $query;
+  
   $query = 'INSERT INTO Event VALUES(NULL, '.$id.', "'.$title.'", NULL)';  
   $result = mysql_query($query) or die(mysql_error());
 
