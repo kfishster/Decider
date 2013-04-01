@@ -52,8 +52,8 @@
         console.log('Good to see you, ' + response.name + '.');
     });
 }
-
-$(document).ready(function(){$('button').click(function(event){ alert('hi');  });});
+alert('loaded!');
+//$(document).ready(function(){$('button').click(function(event){ alert('hi');  });});
 </script>
 
 <script src="bootstrap/js/jquery.js"></script>
