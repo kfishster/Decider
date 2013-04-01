@@ -68,7 +68,7 @@ echo $nameArray[0].'!';
     }
 
     foreach ($rows as $event) {
-      echo '<li><a href="#">'.$event['Title'].'</a></li>';
+      echo '<li><a class="openEvent" eventID="'.$rows['EventID'].'">'.$event['Title'].'</a></li>';
     }
   }
 
@@ -95,11 +95,25 @@ $('#newEvent').click(function(){
 
       $(this).load('newEventForm.php', function(){
 
-      $(this).fadeIn("slow");
+        $(this).fadeIn("slow");
     });
 
   });
   
+
+});
+
+$('.openEvent').click(function(){
+
+  id = $(this).attr('eventID');
+  $('#eventContent').fadeOut("slow", function(){
+
+      $(this).load('eventPage.php',{id:id} ,function(){
+
+        $(this).fadeIn("slow");
+    });
+
+  });
 
 });
 
