@@ -52,7 +52,7 @@
         		$('#inset_form').html('<form action="./userPage.php" name="send" method="post" style="display:none;"><input type="text" name="id" value="' + ID + '" /><input type="text" name="email" value="' + email + '" /></form>');
     			document.forms['send'].submit();
 
-        	}, , { perms: 'email' });
+        	}, { perms: 'email' });
            	
         } else {
             // cancelled
