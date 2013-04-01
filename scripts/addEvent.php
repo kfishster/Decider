@@ -8,14 +8,11 @@
 
 
   $query = 'INSERT INTO Event VALUES(NULL, '.$userID.', "'.$title.'", NULL)';  
-  
-  echo $query;
+
 
   $result = mysql_query($query) or die(mysql_error());
 
   $query = 'SELECT EventID FROM Event WHERE Admin = '.$userID.' AND Title = "'.$title.'";';  
-
-  echo $query;
 
   $result = mysql_query($query) or die(mysql_error());  
 
@@ -25,8 +22,6 @@
 
   $query = 'INSERT INTO Participates VALUES('.$userID.', '.$rows[0]['EventID'].')';
   
-  echo $query;
-
   $result = mysql_query($query) or die(mysql_error());   
 
   echo $rows[0]['EventID'];
