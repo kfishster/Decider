@@ -36,7 +36,7 @@ $query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE 
   if(!isset($rows))
   {
     //Put into database
-    $query = 'INSERT INTO User VALUES('.$id.', "'.$email.'");';
+    $query = 'INSERT INTO User VALUES('.$id.', "'.$email.'" , "'.$name.'");';
     $result = mysql_query($query) or die(mysql_error());
   }
   else
