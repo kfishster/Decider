@@ -51,9 +51,13 @@
     FB.api('/me', function(response) {
         console.log('Good to see you, ' + response.name + '.');
     });
-}
-alert('loaded!');
-//$(document).ready(function(){$('button').click(function(event){ alert('hi');  });});
+	}
+
+	$(document).ready(function(){
+		$('button').click(function(){ 
+			alert('hi');  
+		});
+	});
 </script>
 
 <script src="bootstrap/js/jquery.js"></script>
