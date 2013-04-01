@@ -19,7 +19,7 @@ $id = $_POST['id'];
 $email = $_POST['email'];
 
 
-$query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Has WHERE FBid = "{$id}"';
+$query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Has WHERE FBid = ' . $id;
 
 echo $query;
       
@@ -33,7 +33,7 @@ echo $query;
   if(!isset($rows))
   {
     //Put into database
-    $query = 'INSERT INTO User VALUES({$id}, "{$email}");';
+    $query = 'INSERT INTO User VALUES('.$id.', "'.$email.'");';
     echo $query;
 
     $result = mysql_query($query) or die(mysql_error());
