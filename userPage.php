@@ -28,8 +28,11 @@ echo $nameArray[0].'!</h1><p>';
       
   $result = mysql_query($query) or die(mysql_error());
 
+    for($i = 0; $row = @mysql_fetch_assoc($result); $i++) {
+      $rows[$i] = $row;
+    }
 
-  if(is_null($result))
+  if(is_null($rows))
   {
     //Put into database
     $query = 'INSERT INTO User VALUES('.$id.', "'.$email.'" , "'.$name.'");';
