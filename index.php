@@ -57,7 +57,7 @@
         } else {
             // cancelled
         }
-    });
+    }, {scope: 'email'});
 	}
 
 	function testAPI() {
