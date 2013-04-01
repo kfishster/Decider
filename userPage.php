@@ -73,8 +73,10 @@ echo $nameArray[0].'!';
   }
 
 ?>
+    </ul>
+    <ul class="nav nav-list">
     <li class="nav-header"></li>
-     <li><a id="newEvent"><b>+ Create a new event</b></a></li>
+    <li><a id="newEvent"><b>+ Create a new event</b></a></li>
       </ul>
     </div>
   </div>
