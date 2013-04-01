@@ -13,7 +13,32 @@
 <div class="container"><h1>
 <?php
 
+include('./scripts/database_connection.php');
+
 $id = $_POST['id'];
+$email = $_POST['email'];
+
+$query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Has WHERE FBid = "{id}"';
+      
+  $result = mysql_query($query) or die(mysql_error());
+
+  // Put the result in our own rows table.
+  for($i = 0; $row = @mysql_fetch_assoc($result); $i++) {
+    $rows[$i] = $row;
+  }
+
+  if(!isset($rows[i]))
+  {
+    //Put into database
+    $query = 'INSERT INTO User VALUES({$id}, {$email})';
+    $result = mysql_query($query) or die(mysql_error());
+  }
+  else
+  {
+    //show all events
+  }
+
+
 
 echo $id;
 
