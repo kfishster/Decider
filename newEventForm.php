@@ -21,6 +21,8 @@ $('#submitEvent').submit(function(event){
 
       $('#eventList').append('<li><a class="openEvent" eventID="' + data + '">' + title + '</a></li>').slideDown();
 
+
+
       $('.openEvent').click(function(){
 
         id = $(this).attr('eventID');
@@ -34,7 +36,7 @@ $('#submitEvent').submit(function(event){
         });
 
       });
-      
+
     });
 
   });
