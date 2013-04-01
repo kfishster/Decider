@@ -2,7 +2,6 @@
 <h3>Create a new event</h3>
 <form class="form-horizontal" id="submitEvent">
   
-    <label class="control-label">Title</label>
     
       <input type="text" id="titleinp" placeholder="Title">
     
@@ -15,7 +14,7 @@ $('#submitEvent').submit(function(event){
     event.preventDefault();
     var $form = $(this);
 
-    title = $form.find( 'input[name="titleinp"]' ).val(),
+    title = $('#titleinp').val(),
     id = $('#getUserID').attr('userID');
     alert(title + " " + id);
 
