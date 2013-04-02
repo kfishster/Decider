@@ -18,7 +18,6 @@
 		5FDA6AE8170A7F370096E47B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FDA6AE7170A7F370096E47B /* Default-568h@2x.png */; };
 		5FDA6AEB170A7F370096E47B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FDA6AE9170A7F370096E47B /* MainStoryboard_iPhone.storyboard */; };
 		5FDA6AEE170A7F370096E47B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FDA6AEC170A7F370096E47B /* MainStoryboard_iPad.storyboard */; };
-		5FDA6AF1170A7F370096E47B /* DCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA6AF0170A7F370096E47B /* DCViewController.m */; };
 		5FDA6AF9170A7F370096E47B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDA6AF8170A7F370096E47B /* SenTestingKit.framework */; };
 		5FDA6AFA170A7F370096E47B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDA6AD1170A7F360096E47B /* UIKit.framework */; };
 		5FDA6AFB170A7F370096E47B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDA6AD3170A7F360096E47B /* Foundation.framework */; };
@@ -52,8 +51,6 @@
 		5FDA6AE7170A7F370096E47B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5FDA6AEA170A7F370096E47B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		5FDA6AED170A7F370096E47B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		5FDA6AEF170A7F370096E47B /* DCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCViewController.h; sourceTree = "<group>"; };
-		5FDA6AF0170A7F370096E47B /* DCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCViewController.m; sourceTree = "<group>"; };
 		5FDA6AF7170A7F370096E47B /* Decider-iOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Decider-iOSTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDA6AF8170A7F370096E47B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		5FDA6B00170A7F370096E47B /* Decider-iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Decider-iOSTests-Info.plist"; sourceTree = "<group>"; };
@@ -119,12 +116,10 @@
 		5FDA6AD7170A7F360096E47B /* Decider-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5FDA6AE0170A7F370096E47B /* DCAppDelegate.h */,
-				5FDA6AE1170A7F370096E47B /* DCAppDelegate.m */,
 				5FDA6AE9170A7F370096E47B /* MainStoryboard_iPhone.storyboard */,
 				5FDA6AEC170A7F370096E47B /* MainStoryboard_iPad.storyboard */,
-				5FDA6AEF170A7F370096E47B /* DCViewController.h */,
-				5FDA6AF0170A7F370096E47B /* DCViewController.m */,
+				5FDA6AE0170A7F370096E47B /* DCAppDelegate.h */,
+				5FDA6AE1170A7F370096E47B /* DCAppDelegate.m */,
 				5FDA6AD8170A7F360096E47B /* Supporting Files */,
 			);
 			path = "Decider-iOS";
@@ -277,7 +272,6 @@
 			files = (
 				5FDA6ADE170A7F360096E47B /* main.m in Sources */,
 				5FDA6AE2170A7F370096E47B /* DCAppDelegate.m in Sources */,
-				5FDA6AF1170A7F370096E47B /* DCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

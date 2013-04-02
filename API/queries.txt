@@ -238,4 +238,15 @@ Section 2: Queries
 }
 
 
+### Add Emails To Event [POST] https://decider.azurewindows.com/api/event_add.php
+# Required
+    eid       : the event id that the email will be added to
+    email     : the email of the user that is to be added to the event
+
+# Return
+{
+    "error_code" : the error code of the request
+    "result"     : {}
+}
+
 
