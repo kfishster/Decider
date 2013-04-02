@@ -8,6 +8,8 @@ Section 0: Error Codes
     103 - Invalid Parameters
     104 - Invalid Cookie
     105 - Invalid Permissions
+    106 - User already upvoted todo
+    107 - User already downvoted todo
 
 Section 1: Models
 ----------------------------------------------------------------------------------------
@@ -290,6 +292,26 @@ Section 2: Queries
 }
 
 
+### Add Points For Todo [POST] https://decider.azurewindows.com/api/todo_points.php
+# Required
+    tdid     : the todo id of the todo where points will be added to
+
+# Return
+{
+    "error_code" : the error code of the request
+    "result"     : {}
+}
+
+
+### Remove Points For Todo [GET] https://decider.azurewindows.com/api/todo_points.php
+# Required
+    tdid     : the todo id of the event where points will be removed from
+
+# Return
+{
+    "error_code" : the error code of the request
+    "result"     : {}
+}
 
 
 
