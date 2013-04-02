@@ -7,6 +7,7 @@ Section 0: Error Codes
     102 - Invalid Password
     103 - Invalid Parameters
     104 - Invalid Cookie
+    105 - Invalid Permissions
 
 Section 1: Models
 ----------------------------------------------------------------------------------------
@@ -116,6 +117,19 @@ Section 2: Queries
     "error_code" : the error code of the request
     "result"     : {
                         "locations" : [ array of all partial location models ]
+		   }
+}
+
+
+### Get Participants For Event [GET] https://decider.azurewindows.com/api/event_users.php
+# Required
+    eid    : the event id of the event where users will be taken from
+
+# Return
+{
+    "error_code" : the error code of the request
+    "result"     : {
+                        "users" : [ array of all partial user models ]
 		   }
 }
 
@@ -250,6 +264,31 @@ Section 2: Queries
                         "location" : location model of the newly created location
 		   }
 }
+
+
+### Add Participants For Event [POST] https://decider.azurewindows.com/api/event_participants.php
+# Required
+    eid     : the event id of the event where users will be added to
+    fbid    : the Facebook id of the user to add to the event
+
+# Return
+{
+    "error_code" : the error code of the request
+    "result"     : {}
+}
+
+
+### Remove Participants For Event [GET] https://decider.azurewindows.com/api/event_participants.php
+# Required
+    eid     : the event id of the event where users will be removed from
+    fbid    : the Facebook id of the user to remove from the event
+
+# Return
+{
+    "error_code" : the error code of the request
+    "result"     : {}
+}
+
 
 
 
