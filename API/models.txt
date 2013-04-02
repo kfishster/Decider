@@ -1,0 +1,65 @@
+
+Section 1: Models
+----------------------------------------------------------------------------------------
+### User Model
+{
+    "fbid"  : Facebook id token
+    "email" : user activated email 
+    "name"  : user display name
+}
+
+### Partial Event Model
+{
+    "eid"   : unique event id
+    "admin_fbid" : administrative user fbid for this event
+    "title"      : the title of the event
+}
+
+### Event Model
+{
+    "eid"    : unique event id
+    "admin_fbid"  : administrative user fbid for this event
+    "title"       : the title of the event
+    "description" : the description of the event
+}
+
+### Partial Todo Model
+{
+    "eid"         : the parent event of the todo
+    "tdid"        : unique todo id
+    "title"       : the title of the todo
+    "location"    : partial location model associated with the todo
+}
+
+
+### ToDo Model
+{
+    "eid"         : the parent event of the todo
+    "tdid"        : unique todo id
+    "description" : the description of the todo
+    "title"       : the title of the todo
+    "location"    : location model associated with the todo
+}
+
+### Partial Location Model
+{
+    "lid"           : unique location id
+    "title"         : the title of the location
+    "lat"           : the latitude of the location
+    "lon"           : the longitude of the location
+}
+
+### Location Model
+{
+    "lid"           : unique location id
+    "title"         : the title of the location
+    "street"        : the street of the location
+    "street_number" : the number of the street
+    "city"          : the city the location is in
+    "state"         : the state the location is in
+    "lat"           : the latitude of the location - optional, null if not found
+    "lon"           : the longitude of the location - optional, null if not found
+}
+
+
+
