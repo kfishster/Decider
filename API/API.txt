@@ -120,6 +120,19 @@ Section 2: Queries
 }
 
 
+### Get Participants For Event [GET] https://decider.azurewindows.com/api/event_users.php
+# Required
+    eid    : the event id of the event where users will be taken from
+
+# Return
+{
+    "error_code" : the error code of the request
+    "result"     : {
+                        "users" : [ array of all partial user models ]
+		   }
+}
+
+
 ### Get Events For User [GET] https://decider.azurewindows.com/api/user_events.php
 # Required
     fbid    : the Facebook id of the user events will be taken from
