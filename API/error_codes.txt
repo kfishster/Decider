@@ -1,0 +1,17 @@
+
+Section 0: Error Codes
+----------------------------------------------------------------------------------------
+### Error Codes
+    101 - Invalid Email
+    102 - Invalid Password
+    103 - Invalid Parameters
+    104 - Invalid Cookie
+    105 - Invalid Permissions
+    106 - User already upvoted todo
+    107 - User already downvoted todo
+
+
+
+
+
+
