@@ -36,7 +36,11 @@ echo $nameArray[0].'!';
 <?php
 
   include('./scripts/database_connection.php');
+  include('./cookies.php');
   global $id, $email, $name;
+
+  if(validate_cookie()) echo "done";
+  else echo "not logged in";
 
   $query = 'SELECT * FROM User WHERE FBid = ' . $id;
 
