@@ -232,7 +232,7 @@ $('#submitTodo').submit(function(event){
 
        $('#eventContent').fadeOut("slow", function(){
 
-            $(this).load('eventPage.php',{id:data} ,function(){
+            $(this).load('eventPage.php',{id:evID} ,function(){
 
               $(this).fadeIn("slow");
           });
