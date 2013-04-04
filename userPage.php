@@ -70,29 +70,7 @@
 
 
 <div class="container">
-  <h1 style="text-align: center;">Hey, 
-<?php
 
-  $id = getUserFBId();
-
-  $query = 'SELECT * FROM User WHERE FBid = ' . $id;
-
-      
-  $result = mysql_query($query) or die(mysql_error());
-
-  for($i = 0; $row = @mysql_fetch_assoc($result); $i++) {
-    $rows[$i] = $row;
-  }
-
-
-  $nameArray = explode(' ', $rows[0]['Name']);
-
-
-  echo $nameArray[0].'!';
-?>
-
-</h1>
-<br>
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span4">

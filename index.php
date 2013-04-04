@@ -5,6 +5,7 @@
   include('./scripts/database_connection.php');
   include('./scripts/cookies.php');
 
+
 ?>
 
 <html lang="en">
@@ -118,6 +119,11 @@
       
      <div class="container">
 
+      <?php
+
+      if(isset($_GET['error']))
+        echo '<div class="alert alert-error">You have to log in to join an event. Login is at the upper right section of the page!</div>';
+      ?>
       <!-- Jumbotron -->
       <div class="jumbotron">
         <h1>Join your friends' events!</h1>
