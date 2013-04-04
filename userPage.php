@@ -173,6 +173,8 @@ $('#submitEvent').submit(function(event){
     title = $('#titleinp').val(),
     id = $('#getUserID').attr('userID');
 
+    $('#titleinp').val('').blur();
+
     $.post('./scripts/addEvent.php', {title: title, userID: id} , function (data){
    
 
@@ -215,6 +217,9 @@ $('#submitTodo').submit(function(event){
     descr = $('#descr').val();
     evID = $(this).attr('eventID');
     
+    $('#titletodo').val('').blur();
+    $('#descr').val('').blur();
+
 
     $.post('./scripts/addTodo.php', {title: title, descr: descr, id:evID} , function (){
 
