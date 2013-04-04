@@ -15,10 +15,10 @@
 <div class="container">
   <h1 style="text-align: center;">Hey, 
 <?php
-  
-  echo "cookies php giving error?";
-  include('cookies.php');
-  echo "is it?";
+
+  include('./scripts/database_connection.php');
+  include('./cookies.php');
+
 
   $id = $_POST['id'];
   $email = $_POST['email'];
@@ -41,7 +41,6 @@
 
 <?php
 
-  include('./scripts/database_connection.php');
   global $id, $email, $name;
 
   if(validate_cookie()) echo "done";
