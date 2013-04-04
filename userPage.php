@@ -221,16 +221,8 @@ $('#submitTodo').submit(function(event){
       
       $('#createTodoModal').modal('hide');
 
-      $('#eventContent').fadeOut("slow", function(){
-
-            $(this).load('eventPage.php',{id:evID} ,function(){
-
-              $(this).fadeIn("slow");
-          });
-
-        });
       
-      $('.openEvent').click(function(){
+        $('.openEvent').click(function(){
 
         id = $(this).attr('eventID');
         $('#eventContent').fadeOut("slow", function(){
@@ -244,9 +236,20 @@ $('#submitTodo').submit(function(event){
 
       });
 
+       $('#eventContent').fadeOut("slow", function(){
+
+            $(this).load('eventPage.php',{id:data} ,function(){
+
+              $(this).fadeIn("slow");
+          });
+
+        });
+       
+      });
+
     });
 
-  });
+  
 
 
 });
