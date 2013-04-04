@@ -151,6 +151,13 @@ $('.openEvent').click(function(){
 
         $(this).fadeIn("slow");
 
+        $('.btn\ btn-info').click(function(){
+
+          $('#createTodoModal').modal('show');
+
+  
+        });
+
     });
 
   });
