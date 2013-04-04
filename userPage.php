@@ -54,6 +54,7 @@
     <div class="pull-right">
       <ul class="nav">
         <li><a href="#">Settings</a></li>
+        <li><a href="./userPage.php">Events</a></li>;
         <li><a href="./scripts/signout.php">Logout</a></li>
       </ul>
     </div>
