@@ -141,7 +141,7 @@ $('#newEvent').click(function(){
   
 });
 
-$('#newTodo').click(function(){
+$('.btn btn-info').click(function(){
 
   $('#createTodoModal').modal('show');
 
