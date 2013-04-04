@@ -20,8 +20,8 @@
       $rows[$i] = $row;
     }
 
-  $query = 'INSERT INTO Participates VALUES('.$userID.', '.$rows[0]['EventID'].')';
-  $query = 'INSERT INTO Makes VALUES('.$userID.', '.$rows[0]['EventID'].')';
+  $query = 'INSERT INTO Participates VALUES('.$userID.', '.$rows[0]['EventID'].'); INSERT INTO Makes VALUES('.$userID.', '.$rows[0]['EventID']');';
+  
   
   $result = mysql_query($query) or die(mysql_error());   
 
