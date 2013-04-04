@@ -30,7 +30,7 @@ foreach($rows as $todo)
 {
 	$hash = hash('md4', $todo['Title'] + strval(rand()));
 	echo '<div class="accordion-group"> <div class="accordion-heading">';
-	echo '<div><h4><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$hash.'">'.$todo['Title'].'</a></h4><div>';
+	echo '<div><h4><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$hash.'">'.$todo['Title'].'</a></h4></div>';
 	echo '<div class="pull-right"> - '.$todo['Points'].' + </div></div>';
 	
 	echo '<div id="'.$hash.'" class="accordion-body collapse"><div class="accordion-inner">';
