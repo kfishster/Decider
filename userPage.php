@@ -234,7 +234,6 @@ $('#submitTodo').submit(function(event){
     });
 
   });
-});
 
 </script>
 
