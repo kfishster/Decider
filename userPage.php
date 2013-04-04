@@ -198,7 +198,7 @@ $('#submitEvent').submit(function(event){
     <div class="modal-body">
       <div class="tab-pane">
           <div>
-                  <form id="passForm" class="form-inline" method="post">
+              <form id="submitEvent" class="form" method="post">
         
                   <div class="controls">
                   <input type="text" id="titleinp" placeholder="Title" class="span5">
