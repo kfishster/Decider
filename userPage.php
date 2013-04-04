@@ -141,6 +141,13 @@ $('#newEvent').click(function(){
   
 });
 
+$('#newTodo').click(function(){
+
+  $('#createTodoModal').modal('show');
+
+  
+});
+
 $('.openEvent').click(function(){
 
   id = $(this).attr('eventID');
@@ -226,6 +233,33 @@ $('#submitEvent').submit(function(event){
     </div>
     
   </div>
+
+  <div id="createTodoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">New Idea</h3>
+    </div>
+    <div class="modal-body">
+      <div class="tab-pane">
+        <div>
+          <form id="submitEvent" class="form" method="post">
+
+            <div class="controls">
+              <input type="text" id="titletodo" placeholder="Title" class="span5">
+            </div>
+            <div class="controls controls-row">
+             <textarea rows="3" placeholder="Description" id="descr"></textarea>
+           </div>
+
+           <button type="submit" class="btn">Submit</button>
+
+         </form>
+
+       </div>
+     </div>
+   </div>
+
+ </div>
 
 </body>
 </html>
