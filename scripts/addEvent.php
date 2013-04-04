@@ -24,8 +24,6 @@
   
   $result = mysql_query($query) or die(mysql_error());   
 
-
-
   echo $rows[0]['EventID'];
 
 ?>
