@@ -27,7 +27,7 @@ foreach($rows as $todo)
 	echo '<p>'.$todo['Description'].'</p><br>';
 }
 
-echo '<br><p>Added by '.$event['Name'].'</p><br>'
+echo '<br><p>Added by '.$event['Name'].'</p><br>';
 
 echo '<a id="newIdea" class="btn btn-info"><b>Add an idea</b></a>';
 
