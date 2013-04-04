@@ -55,7 +55,7 @@
      if(!isset($_COOKIE['DeciderApp'])) return False;
      $hash = get_hash_for_cookie();
     
-     $query = "SELECT FacebookId,Time FROM Cookies WHERE Cookie=\"{$hash}\"";
+     $query = "SELECT FacebookId, Time FROM Cookies WHERE Cookie=\"{$hash}\"";
      $result = mysql_query($query) or die(mysql_error());
      $row = mysql_fetch_array($result, MYSQL_NUM);
     

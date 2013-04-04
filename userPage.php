@@ -44,6 +44,7 @@
   global $id, $email, $name;
 
   if(validate_cookie()) echo "done";
+  
   else echo "not logged in";
 
   $query = 'SELECT * FROM User WHERE FBid = ' . $id;
