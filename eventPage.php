@@ -44,7 +44,7 @@ echo '<br><b><p>Event added by '.$event['Name'].'</p></b><br>';
 echo '<br><p>Participants: ';
 
 $query = 'SELECT Name FROM Event NATURAL JOIN Participates NATURAL JOIN User WHERE Event.EventID = ' . $id;
-$result = mysql_query($eventQuery) or die(mysql_error());
+$result = mysql_query($query) or die(mysql_error());
 
 for($i = 0; $row = @mysql_fetch_assoc($result); $i++) {
   $rows[$i] = $row;
