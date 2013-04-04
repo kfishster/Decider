@@ -86,7 +86,7 @@
 
 <?php
 
-  global $id;
+  $id = getUserFBId();
 
   $query = 'SELECT * FROM User WHERE FBid = ' . $id;
 
