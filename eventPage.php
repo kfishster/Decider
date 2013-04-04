@@ -58,7 +58,7 @@ foreach($rows as $person)
 {
 	
 	if(++$i === $last)
-		echo $person['Name'].'<br>';
+		echo $person['Name'].'<br><br>';
 	else
 		echo $person['Name'] . ', ';
 }
