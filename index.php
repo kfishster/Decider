@@ -101,7 +101,7 @@
 
          if(validate_cookie()) 
             {
-              echo '<li><a href="./eventPage.php">Events</a></li>';
+              echo '<li><a href="./userPage.php">Events</a></li>';
               echo '<li><a href="./scripts/signout.php">Logout</a></li>';
             }
          else
