@@ -6,7 +6,7 @@ $id = $_POST['id'];
 include('./scripts/database_connection.php');
 
 $query = 'SELECT * FROM Has NATURAL JOIN Todo WHERE EventID = ' . $id;
-$eventQuery = 'SELECT * FROM Event INNER JOIN User ON AdminID = FBid WHERE EventID = ' . $id;
+$eventQuery = 'SELECT * FROM Event INNER JOIN User ON Admin = FBid WHERE EventID = ' . $id;
 
       
 $result = mysql_query($query) or die(mysql_error());
