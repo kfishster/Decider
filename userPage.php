@@ -42,7 +42,6 @@
 <?php
 
   include('./scripts/database_connection.php');
-  include('./cookies.php');
   global $id, $email, $name;
 
   if(validate_cookie()) echo "done";
