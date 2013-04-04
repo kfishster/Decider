@@ -15,9 +15,11 @@
 <div class="container">
   <h1 style="text-align: center;">Hey, 
 <?php
+  
+  echo "cookies php giving error?";
   include('cookies.php');
+  echo "is it?";
 
-  echo $id;
   $id = $_POST['id'];
   $email = $_POST['email'];
   $name = $_POST['name'];
