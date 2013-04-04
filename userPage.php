@@ -71,6 +71,12 @@
 
 <div class="container">
 
+<?php
+
+      if(isset($_GET['join']))
+        echo '<div class="alert alert-success"><b>Successfully joined the event!</b> Check it out in the sidebar.</div>';
+?>
+
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span4">

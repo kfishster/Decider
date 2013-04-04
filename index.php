@@ -122,7 +122,7 @@
       <?php
 
       if(isset($_GET['error']))
-        echo '<div class="alert alert-error">You have to log in to join an event. Login is at the upper right section of the page!</div>';
+        echo '<div class="alert alert-error"><b>You have to log in to join an event</b> Login is at the upper right section of the page!</div>';
       ?>
       <!-- Jumbotron -->
       <div class="jumbotron">
