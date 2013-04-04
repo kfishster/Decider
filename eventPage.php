@@ -34,10 +34,10 @@ foreach($rows as $todo)
 	
 	echo '<div id="'.$hash.'" class="accordion-body collapse"><div class="accordion-inner">';
 	echo '<p>'.$todo['Description'].'</p>';
-	echo '</div></div>';
+	echo '</div></div></div>';
 
 }
-echo '</div></div>';
+echo '</div>';
 
 echo '<br><p>Added by '.$event['Name'].'</p><br>';
 
