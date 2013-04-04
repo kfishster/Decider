@@ -222,18 +222,19 @@ $('#submitTodo').submit(function(event){
       $('#createTodoModal').modal('hide');
 
       
-      $('#newIdea').click(function(){
-
-          $('#submitTodo').attr('eventID', id);
-          $('#createTodoModal').modal('show');
-
-  
-      });
+      
 
        $('#eventContent').fadeOut("slow", function(){
 
             $(this).load('eventPage.php',{id:evID} ,function(){
 
+              $('#newIdea').click(function(){
+
+                  $('#submitTodo').attr('eventID', id);
+                  $('#createTodoModal').modal('show');
+
+  
+              });
               $(this).fadeIn("slow");
           });
 
