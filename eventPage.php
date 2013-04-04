@@ -30,8 +30,8 @@ foreach($rows as $todo)
 {
 	$hash = hash('md4', $todo['Title'] + strval(rand()));
 	echo '<div class="accordion-group"> <div class="accordion-heading">';
-	echo '<div><h4><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$hash.'">'.$todo['Title'].'</a></h4></div>';
-	echo '<div class="pull-right"> - '.$todo['Points'].' + </div></div>';
+	echo '<h4><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$hash.'">'.$todo['Title'].'  |   '.$todo['Points'].'points</a></h4>';
+	echo '</div>';
 	
 	echo '<div id="'.$hash.'" class="accordion-body collapse"><div class="accordion-inner">';
 	echo '<p>'.$todo['Description'].'</p>';
@@ -42,7 +42,13 @@ echo '</div>';
 
 echo '<br><p>Added by '.$event['Name'].'</p><br>';
 
-echo '<a id="newIdea" class="btn btn-info"><b>Add an idea</b></a>';
+echo '<a id="newIdea" class="btn btn-info"><b>Add an idea</b></a><br>';
+
+echo '<p>To add other people to this event, throw them this link:';
+echo 'http://decider.azurewebsites.net/joinEvent.php?id=' . $id;
+echo '</p>';
+
+
 
 ?>
 
