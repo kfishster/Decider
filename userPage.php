@@ -216,9 +216,9 @@ $('#submitTodo').submit(function(event){
     evID = $(this).attr('eventID');
     
 
-    $.post('./scripts/addTodo.php', {title: title, descr: descr, id:evID} , function (){
+    $.post('./scripts/addTodo.php', {title: title, descr: descr, id:evID} , function (data){
    
-
+      alert(data);
     
       $('#createTodoModal').modal('hide');
 
