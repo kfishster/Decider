@@ -1,3 +1,11 @@
+<?php
+
+  include('./scripts/database_connection.php');
+  include('./scripts/cookies.php');
+
+  if(!validate_cookie()) header('Location: index.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +23,6 @@
 <div class="container">
   <h1 style="text-align: center;">Hey, 
 <?php
-
-  include('./scripts/database_connection.php');
-  include('./scripts/cookies.php');
-
-  if(validate_cookie()) echo 'Person signed in!';
-  else echo 'person not signed in :(';
 
   $id = getUserFBId();
 
@@ -52,7 +54,7 @@
 <?php
 
   global $id;
-  
+
   $query = 'SELECT * FROM User WHERE FBid = ' . $id;
 
       
