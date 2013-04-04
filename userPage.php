@@ -215,15 +215,14 @@ $('#submitTodo').submit(function(event){
     evID = $(this).attr('eventID');
     
 
-    $.post('./scripts/addTodo.php', {title: title, descr: descr, id:evID} , function (data){
-   
-      alert(data);
-    
+    $.post('./scripts/addTodo.php', {title: title, descr: descr, id:evID} , function (){
+
+      
       $('#createTodoModal').modal('hide');
 
       $('#eventContent').fadeOut("slow", function(){
 
-            $(this).load('eventPage.php',{id:data} ,function(){
+            $(this).load('eventPage.php',{id:evID} ,function(){
 
               $(this).fadeIn("slow");
           });
