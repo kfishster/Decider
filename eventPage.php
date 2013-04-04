@@ -44,7 +44,7 @@ echo '<br><p>Added by '.$event['Name'].'</p><br>';
 
 echo '<a id="newIdea" class="btn btn-info"><b>Add an idea</b></a><br>';
 
-echo '<p>To add other people to this event, throw them this link:';
+echo '<br><p>To add other people to this event, throw them this link:<br>';
 echo 'http://decider.azurewebsites.net/joinEvent.php?id=' . $id;
 echo '</p>';
 
