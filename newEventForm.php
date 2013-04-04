@@ -18,7 +18,7 @@ $('#submitEvent').submit(function(event){
     id = $('#getUserID').attr('userID');
 
     $.post('./scripts/addEvent.php', {title: title, userID: id} , function (data){
-      alert(data);
+   
 
       $('#eventList').append('<li><a class="openEvent" eventID="' + data + '">' + title + '</a></li>').slideDown();
 

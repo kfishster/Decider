@@ -82,7 +82,7 @@
     <div class="span4">
       <div class="well">
       <ul class="nav nav-list" id="eventList">
-        <li class="nav-header" id="getUserID" userID="<?php global $id; echo $id;?>">My Events</li>
+        <li class="nav-header" id="getUserID" userID="<?php echo getUserFBId();?>">My Events</li>
 
 <?php
 
