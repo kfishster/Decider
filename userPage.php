@@ -55,7 +55,7 @@
       <ul class="nav">
         <li><a href="#">Settings</a></li>
         <li><a href="./userPage.php">Events</a></li>
-        <li><a href="./scripts/signout.php">Logout <?php getUserName() ?></a></li>
+        <li><a href="./scripts/signout.php">Logout <?php explode(' ', getUserName())[0]; ?></a></li>
       </ul>
     </div>
   </div>
