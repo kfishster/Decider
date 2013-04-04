@@ -20,10 +20,21 @@
   include('./scripts/cookies.php');
 
   if(validate_cookie()) echo 'Person signed in!';
-  else echo 'person not signed in :('
+  else echo 'person not signed in :(';
+
+  $id = getUserFBId();
+
+  $query = 'SELECT * FROM User WHERE FBid = ' . $id;
+
+      
+  $result = mysql_query($query) or die(mysql_error());
+
+  for($i = 0; $row = @mysql_fetch_assoc($result); $i++) {
+    $rows[$i] = $row;
+  }
 
 
-  $nameArray = explode(' ', $name);
+  $nameArray = explode(' ', $rows[0]['Name']);
 
 
   echo $nameArray[0].'!';
@@ -40,8 +51,8 @@
 
 <?php
 
-  global $id, $email, $name;
-
+  global $id;
+  
   $query = 'SELECT * FROM User WHERE FBid = ' . $id;
 
       
@@ -51,15 +62,7 @@
       $rows[$i] = $row;
     }
 
-  if(is_null($rows))
-  {
-    //Put into database
-    $query = 'INSERT INTO User VALUES('.$id.', "'.$email.'" , "'.$name.'");';
-    $result = mysql_query($query) or die(mysql_error());
-  
-  }
-  else
-  {
+
     $query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE FBid = ' . $id;
 
       
@@ -74,7 +77,7 @@
     foreach ($rows as $event) {
       echo '<li><a class="openEvent" eventID="'.$event['EventID'].'">'.$event['Title'].'</a></li>';
     }
-  }
+  
 
 ?>
     </ul>
