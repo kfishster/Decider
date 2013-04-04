@@ -94,4 +94,16 @@
      return $row[0];
   }
 
+  //This function gets the user Facebook Id from the database given a cookie and finds the name in this entry
+  //@return Name categorized under the FBid
+  function getUserName(){
+     $id = getUserFBId();
+
+     $query = 'SELECT Name FROM User WHERE FBid = ' . $id;
+     $result = mysql_query($query) or die(mysql_error());
+
+     $name = mysql_fetch_assoc($result);
+     return $name['Name'];
+  }
+
 ?>
