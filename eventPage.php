@@ -52,7 +52,7 @@ for($i = 0; $row = @mysql_fetch_assoc($result); $i++) {
 
 $last = count($rows);
 echo 'count: '. $last;
-$i = 1;
+$i = 0;
 
 foreach($rows as $person)
 {
