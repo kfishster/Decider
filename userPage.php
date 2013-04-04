@@ -50,11 +50,11 @@
 
 <div class="navbar">
   <div class="navbar-inner">
-    <a class="brand" href="#">DecidR</a>
+    <a class="brand" href="index.php">DecidR</a>
     <div class="pull-right">
       <ul class="nav">
         <li><a href="#">Settings</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="scripts/logout.php">Logout</a></li>
       </ul>
     </div>
   </div>

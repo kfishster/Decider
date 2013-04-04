@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+
+<?php
+
+  include('./scripts/database_connection.php');
+  include('./scripts/cookies.php');
+
+?>
+
 <html lang="en">
 <head>
 	<script src="bootstrap/js/jquery.js"></script>
@@ -49,35 +57,6 @@
       }
 
 
-      /* Customize the navbar links to be fill the entire space of the .navbar */
-      .navbar .navbar-inner {
-        padding: 0;
-      }
-      .navbar .nav {
-        margin: 0;
-        display: table;
-        width: 100%;
-      }
-      .navbar .nav li {
-        display: table-cell;
-        width: 1%;
-        float: none;
-      }
-      .navbar .nav li a {
-        font-weight: bold;
-        text-align: center;
-        border-left: 1px solid rgba(255,255,255,.75);
-        border-right: 1px solid rgba(0,0,0,.1);
-      }
-      .navbar .nav li:first-child a {
-        border-left: 0;
-        border-radius: 3px 0 0 3px;
-      }
-      .navbar .nav li:last-child a {
-        border-right: 0;
-        border-radius: 0 3px 3px 0;
-      }
-
     /* CUSTOMIZE THE NAVBAR
     -------------------------------------------------- */
 
@@ -113,11 +92,20 @@
 
 <div class="navbar">
   <div class="navbar-inner">
-    <a class="brand" href="#">DecidR</a>
+    <a class="brand" href="index.php">DecidR</a>
     <div class="pull-right">
       <ul class="nav">
         <li><a href="#">Settings</a></li>
-        <li><a href="#">Logout</a></li>
+
+        <?php
+
+         if(validate_cookie()) 
+            echo '<li><a href="scripts/logout.php">Logout</a></li>';
+         else
+            echo '<li><a class="btn btn-success" id="loginFB">Login with Facebook</a></li>';
+
+        ?>
+        
       </ul>
     </div>
   </div>
