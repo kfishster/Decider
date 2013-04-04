@@ -50,9 +50,14 @@ for($i = 0; $row = @mysql_fetch_assoc($result); $i++) {
   $rows[$i] = $row;
 }
 
+$last = end($rows);
 foreach($rows as $person)
 {
-	echo $person['Name'] . '<br>';
+	
+	if($last == $person)
+		echo $person['Name'];
+	else
+		echo $person['Name'] . ', ';
 }
 echo '</p><br>';
 
