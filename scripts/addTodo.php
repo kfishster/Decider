@@ -12,7 +12,7 @@
 
   $result = mysql_query($query) or die(mysql_error());
 
-  $query = 'SELECT TodoID FROM Todo WHERE Title = '.$title.' AND Description = "'.$descr.'";';  
+  $query = 'SELECT TodoID FROM Todo WHERE Title = "'.$title.'" AND Description = "'.$descr.'";';  
 
   $result = mysql_query($query) or die(mysql_error());  
 
