@@ -168,7 +168,7 @@
         		email = response.email;
         		name = response.name;
 
-            $.post('./scripts/signin.php', {id: ID, email:email, name:name}, function(){window.location = 'userPage.php'});
+            $.post('./scripts/signin.php', {id: ID, email:email, name:name}, function(response){ alert(response); window.location = 'userPage.php';});
         		
         		//$('#inset_form').html('<form action="./userPage.php" name="send" method="post" style="display:none;"><input type="text" name="id" value="' + ID + '" /><input type="text" name="email" value="' + email + '" /><input type="text" name="name" value="' + name + '" /></form>');
     			//document.forms['send'].submit();
