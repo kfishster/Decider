@@ -169,8 +169,7 @@ $('.openEvent').click(function(){
 $('#submitEvent').submit(function(event){
     event.preventDefault();
     var $form = $(this);
-    $('#eventLoading').css('width', '0%');
-    $('#eventLoading').fadeIn('slow');
+    
 
     title = $('#titleinp').val(),
     id = $('#getUserID').attr('userID');
@@ -178,7 +177,7 @@ $('#submitEvent').submit(function(event){
 
     $.post('./scripts/addEvent.php', {title: title, userID: id} , function (data){
    
-      $('#eventLoading').css('width', '40%');
+      
 
       $('#eventList').append('<li><a class="openEvent" eventID="' + data + '">' + title + '</a></li>');
 
@@ -198,14 +197,13 @@ $('#submitEvent').submit(function(event){
         });
 
       });
-      $('#eventLoading').css('width', '60%');
+     
        $('#eventContent').fadeOut("slow", function(){
-          $('#eventLoading').css('width', '80%');
+          
 
             $(this).load('eventPage.php',{id:data} ,function(){
 
-              $('#eventLoading').css('width', '100%');
-              $('#createEventModal').modal('hide', function(){$('#eventLoading').fadeOut('slow');});
+              $('#createEventModal').modal('hide');
               $(this).fadeIn("slow");
           });
 
@@ -314,10 +312,7 @@ $('#submitTodo').submit(function(event){
            </div>
 
            <button type="submit" class="btn">Submit</button>
-           <br>
-           <div class="progress progress-striped active" style="display:none;" id="todoLoading">
-              <div class="bar" style="width: 10%;"></div>
-          </div>
+          
 
          </form>
 

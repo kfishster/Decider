@@ -51,15 +51,16 @@ for($i = 0; $row = @mysql_fetch_assoc($result); $i++) {
 }
 
 $last = count($rows);
+echo 'count: '. $last;
 $i = 1;
 
 foreach($rows as $person)
 {
 	
 	if(++$i === $last)
-		echo $person['Name'];
+		echo $i.$person['Name'];
 	else
-		echo $person['Name'] . ', ';
+		echo $i.$person['Name'] . ', ';
 }
 echo '</p><br>';
 
