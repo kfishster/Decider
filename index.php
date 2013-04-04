@@ -112,7 +112,7 @@
 </div>
 
       
-     
+     <div class="container">
 
       <!-- Jumbotron -->
       <div class="jumbotron">
