@@ -222,18 +222,12 @@ $('#submitTodo').submit(function(event){
       $('#createTodoModal').modal('hide');
 
       
-        $('.openEvent').click(function(){
+      $('#newIdea').click(function(){
 
-        id = $(this).attr('eventID');
-        $('#eventContent').fadeOut("slow", function(){
+          $('#submitTodo').attr('eventID', id);
+          $('#createTodoModal').modal('show');
 
-            $(this).load('eventPage.php',{id:id} ,function(){
-
-              $(this).fadeIn("slow");
-          });
-
-        });
-
+  
       });
 
        $('#eventContent').fadeOut("slow", function(){
@@ -244,7 +238,7 @@ $('#submitTodo').submit(function(event){
           });
 
         });
-       
+
       });
 
     });
@@ -260,7 +254,7 @@ $('#submitTodo').submit(function(event){
 
 <div id="createEventModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       <h3 id="myModalLabel">New Event</h3>
     </div>
     <div class="modal-body">
@@ -288,7 +282,7 @@ $('#submitTodo').submit(function(event){
 
   <div id="createTodoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       <h3 id="myModalLabel">New Idea</h3>
     </div>
     <div class="modal-body">
