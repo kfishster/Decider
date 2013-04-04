@@ -153,6 +153,7 @@ $('.openEvent').click(function(){
 
         $('#newIdea').click(function(){
 
+          $('#submitTodo').attr('eventID', id);
           $('#createTodoModal').modal('show');
 
   
@@ -206,6 +207,35 @@ $('#submitEvent').submit(function(event){
   });
 });
 
+$('#submitTodo').submit(function(event){
+    event.preventDefault();
+    var $form = $(this);
+
+    title = $('#titletodo').val(),
+    descr = $('#descr').val();
+    evID = $(this).attr('eventID');
+    
+
+    $.post('./scripts/addTodo.php', {title: title, descr: descr, id:evID} , function (){
+   
+
+    
+      $('#createTodoModal').modal('hide');
+
+      $('#eventContent').fadeOut("slow", function(){
+
+            $(this).load('eventPage.php',{id:data} ,function(){
+
+              $(this).fadeIn("slow");
+          });
+
+        });
+
+    });
+
+  });
+});
+
 </script>
 
 <div id="createEventModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -244,13 +274,13 @@ $('#submitEvent').submit(function(event){
     <div class="modal-body">
       <div class="tab-pane">
         <div>
-          <form id="submitEvent" class="form" method="post">
+          <form id="submitTodo" eventID="" class="form" method="post">
 
             <div class="controls">
               <input type="text" id="titletodo" placeholder="Title" class="span5">
             </div>
             <div class="controls controls-row">
-             <textarea rows="3" placeholder="Description" id="descr"></textarea>
+             <textarea rows="3" placeholder="Description" id="descr" class="span5"></textarea>
            </div>
 
            <button type="submit" class="btn">Submit</button>
