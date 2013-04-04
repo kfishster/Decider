@@ -62,7 +62,7 @@
 </head>
 <body>
 
-<div class="navbar">
+<div class="navbar-wrapper">
   <div class="navbar-inner">
     <a class="brand" href="#">DecidR</a>
     <div class="pull-right">
