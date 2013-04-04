@@ -6,7 +6,7 @@ $id = $_POST['id'];
 include('./scripts/database_connection.php');
 
 $query = 'SELECT * FROM Has NATURAL JOIN Todo WHERE EventID = ' . $id;
-$eventQuery = 'SELECT * FROM Event WHERE EventID = ' . $id;
+$eventQuery = 'SELECT * FROM Event INNER JOIN User ON AdminID = FBid WHERE EventID = ' . $id;
 
       
 $result = mysql_query($query) or die(mysql_error());
@@ -17,9 +17,7 @@ for($i = 0; $row = @mysql_fetch_assoc($result); $i++) {
 
 $result = mysql_query($eventQuery) or die(mysql_error());
 
-$event = mysql_fetch_array($result, MYSQL_NUM);
-
-var_dump($event);
+$event = mysql_fetch_assoc($result);
 
 echo '<h3>'.$event['Title'].'</h3><br>';
 
