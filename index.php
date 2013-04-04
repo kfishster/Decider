@@ -102,7 +102,7 @@
          if(validate_cookie()) 
             echo '<li><a href="./scripts/signout.php">Logout</a></li>';
          else
-            echo '<li><a class="btn btn-success" id="loginFB">Login with Facebook</a></li>';
+            echo '<li><b><a id="loginFB">Login with Facebook</a></b></li>';
 
         ?>
         
@@ -118,7 +118,7 @@
       <div class="jumbotron">
         <h1>Join your friends' events!</h1>
         <p class="lead">Login to Decidr to coordinate your hang outs and meet ups!</p>
-        <a class="btn btn-large btn-success" id="loginFB">Login with Facebook</a>
+        
       </div>
 
       <hr>

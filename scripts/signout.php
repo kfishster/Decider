@@ -8,14 +8,14 @@
   {
     
     $id =  getUserFBId();
-    echo $id;    
+    //echo $id;    
     logout($id);
-    //header('Location: ~/index.php')
+    header( 'Location: ../index.php' ) ;
   }
   else
   {
     
-    header('Location: ~/index.php');
+    header( 'Location: ../index.php' ) ;
   }
 
 
