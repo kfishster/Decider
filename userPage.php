@@ -1,11 +1,3 @@
-<?php
-
-  include('./scripts/database_connection.php');
-  include('./cookies.php');
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
