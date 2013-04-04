@@ -15,15 +15,16 @@
 <div class="container">
   <h1 style="text-align: center;">Hey, 
 <?php
-  include('./cookies.php');
+  include('cookies.php');
 
+  echo $id;
   $id = $_POST['id'];
   $email = $_POST['email'];
   $name = $_POST['name'];
   $nameArray = explode(' ', $name);
 
+
   set_cookie($id);
-  echo $id;
 
   echo $nameArray[0].'!';
 ?>
