@@ -133,14 +133,10 @@
 
 <script type="text/javascript">
 
+$(document).ready(function(){
 $('#newEvent').click(function(){
 
-  $('#eventContent').fadeOut("slow", function(){
-
-      $(this).load('newEventForm.php', function(){
-
-        $(this).fadeIn("slow");
-    });
+  $('#createEventModal').modal('show');
 
   });
   
@@ -161,10 +157,65 @@ $('.openEvent').click(function(){
 
 });
 
+$('#submitEvent').submit(function(event){
+    event.preventDefault();
+    var $form = $(this);
+
+    title = $('#titleinp').val(),
+    id = $('#getUserID').attr('userID');
+
+    $.post('./scripts/addEvent.php', {title: title, userID: id} , function (data){
+   
+
+      $('#eventList').append('<li><a class="openEvent" eventID="' + data + '">' + title + '</a></li>').slideDown();
 
 
+
+      $('.openEvent').click(function(){
+
+        id = $(this).attr('eventID');
+        $('#eventContent').fadeOut("slow", function(){
+
+            $(this).load('eventPage.php',{id:id} ,function(){
+
+              $(this).fadeIn("slow");
+          });
+
+        });
+
+      });
+
+    });
+
+  });
+});
 
 </script>
+
+<div id="createEventModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">New Event</h3>
+    </div>
+    <div class="modal-body">
+      <div class="tab-pane">
+          <div>
+                  <form id="passForm" class="form-inline" method="post">
+        
+                  
+                  <input type="text" id="titleinp" placeholder="Title"><br>
+                  <input type="text" id="dateinp" placeholder="Date"><br>
+                  <input type="text" id="timeinp" placeholder="Time"><br>
+
+                  <button type="submit" class="btn">Submit</button>
+            
+                  </form>
+                 
+                 </div>
+          </div>
+    </div>
+    
+  </div>
 
 </body>
 </html>
