@@ -32,12 +32,4 @@ echo '<br><p>Added by '.$event['Name'].'</p><br>';
 echo '<a id="newIdea" class="btn btn-info"><b>Add an idea</b></a>';
 
 ?>
-<script type="text/javascript">
-$('.btn btn-info').click(function(){
 
-  $('#createTodoModal').modal('show');
-
-  
-});
-
-</script>

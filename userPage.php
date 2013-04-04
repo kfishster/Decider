@@ -150,6 +150,13 @@ $('.openEvent').click(function(){
       $(this).load('eventPage.php',{id:id} ,function(){
 
         $(this).fadeIn("slow");
+
+        $('.btn btn-info').click(function(){
+
+        $('#createTodoModal').modal('show');
+
+  
+      });
     });
 
   });
