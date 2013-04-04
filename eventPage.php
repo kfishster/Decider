@@ -19,6 +19,8 @@ $result = mysql_query($eventQuery) or die(mysql_error());
 
 $event = mysql_fetch_array($result, MYSQL_NUM);
 
+var_dump($event);
+
 echo '<h3>'.$event['Title'].'</h3><br>';
 
 foreach($rows as $todo)
