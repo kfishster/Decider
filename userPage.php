@@ -228,6 +228,20 @@ $('#submitTodo').submit(function(event){
           });
 
         });
+      
+      $('.openEvent').click(function(){
+
+        id = $(this).attr('eventID');
+        $('#eventContent').fadeOut("slow", function(){
+
+            $(this).load('eventPage.php',{id:id} ,function(){
+
+              $(this).fadeIn("slow");
+          });
+
+        });
+
+      });
 
     });
 
