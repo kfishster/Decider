@@ -24,7 +24,7 @@
   <h1 style="text-align: center;">Hey, 
 <?php
 
-  include('database_connection.php');
+  include('./scripts/database_connection.php');
   include('./scripts/cookies.php');
 
   if(validate_cookie()) echo 'Person signed in!';
@@ -49,7 +49,7 @@
 <?php
 
   global $id, $email, $name;
-  
+
   $query = 'SELECT * FROM User WHERE FBid = ' . $id;
 
       

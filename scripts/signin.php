@@ -1,7 +1,7 @@
 <?php
 
   include('database_connection.php');
-  include('./cookies.php');
+  include('cookies.php');
 
 
   $id = $_POST['id'];
