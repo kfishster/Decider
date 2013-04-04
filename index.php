@@ -100,7 +100,10 @@
         <?php
 
          if(validate_cookie()) 
-            echo '<li><a href="./scripts/signout.php">Logout</a></li>';
+            {
+              echo '<li><a href="./eventPage.php">Events</a></li>';
+              echo '<li><a href="./scripts/signout.php">Logout</a></li>';
+            }
          else
             echo '<li><a id="loginFB">Login with Facebook</a></li>';
 
