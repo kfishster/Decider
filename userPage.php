@@ -165,9 +165,9 @@ $('#submitEvent').submit(function(event){
     $.post('./scripts/addEvent.php', {title: title, userID: id} , function (data){
    
 
-      $('#eventList').append('<li><a class="openEvent" eventID="' + data + '">' + title + '</a></li>').slideDown();
+      $('#eventList').append('<li><a class="openEvent" eventID="' + data + '">' + title + '</a></li>');
 
-
+      $('#createEventModal').modal('hide');
 
       $('.openEvent').click(function(){
 
@@ -182,6 +182,15 @@ $('#submitEvent').submit(function(event){
         });
 
       });
+
+       $('#eventContent').fadeOut("slow", function(){
+
+            $(this).load('eventPage.php',{id:data} ,function(){
+
+              $(this).fadeIn("slow");
+          });
+
+        });
 
     });
 
