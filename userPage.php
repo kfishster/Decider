@@ -201,8 +201,8 @@ $('#submitEvent').submit(function(event){
                   <form id="passForm" class="form-inline" method="post">
         
                   
-                  <input type="text" id="titleinp" placeholder="Title"><br>
-                  <input type="text" id="dateinp" placeholder="Date"><br>
+                  <input type="text" id="titleinp" placeholder="Title" class="input-xxlarge"><br>
+                  <input type="text" id="dateinp" placeholder="Date">
                   <input type="text" id="timeinp" placeholder="Time"><br>
 
                   <button type="submit" class="btn">Submit</button>
