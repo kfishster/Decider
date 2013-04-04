@@ -4,6 +4,7 @@
   include('./scripts/cookies.php');
 
   if(!validate_cookie()) header('Location: index.php');
+
 ?>
 
 <!DOCTYPE html>
