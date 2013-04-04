@@ -138,9 +138,7 @@ $('#newEvent').click(function(){
 
   $('#createEventModal').modal('show');
 
-  });
   
-
 });
 
 $('.openEvent').click(function(){
