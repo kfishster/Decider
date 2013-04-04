@@ -1,3 +1,11 @@
+<?php
+
+  include('./scripts/database_connection.php');
+  include('./cookies.php');
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,20 +24,19 @@
   <h1 style="text-align: center;">Hey, 
 <?php
 
-  include('./scripts/database_connection.php');
-  include('./cookies.php');
+  include('database_connection.php');
+  include('./scripts/cookies.php');
+
+  if(validate_cookie()) echo 'Person signed in!';
+  else echo 'person not signed in :('
 
 
-  $id = $_POST['id'];
-  $email = $_POST['email'];
-  $name = $_POST['name'];
   $nameArray = explode(' ', $name);
 
 
-  set_cookie($id);
-
   echo $nameArray[0].'!';
 ?>
+
 </h1>
 <br>
 <div class="container-fluid">
@@ -42,11 +49,7 @@
 <?php
 
   global $id, $email, $name;
-
-  if(validate_cookie()) echo "done";
   
-  else echo "not logged in";
-
   $query = 'SELECT * FROM User WHERE FBid = ' . $id;
 
       
