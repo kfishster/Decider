@@ -141,12 +141,6 @@ $('#newEvent').click(function(){
   
 });
 
-$('.btn btn-info').click(function(){
-
-  $('#createTodoModal').modal('show');
-
-  
-});
 
 $('.openEvent').click(function(){
 
