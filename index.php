@@ -102,7 +102,7 @@
          if(validate_cookie()) 
             echo '<li><a href="./scripts/signout.php">Logout</a></li>';
          else
-            echo '<li><b><a id="loginFB">Login with Facebook</a></b></li>';
+            echo '<li><a id="loginFB">Login with Facebook</a></li>';
 
         ?>
         
