@@ -210,7 +210,7 @@ $('#submitEvent').submit(function(event){
 $('#submitTodo').submit(function(event){
     event.preventDefault();
     var $form = $(this);
-
+    alert('caught!');
     title = $('#titletodo').val(),
     descr = $('#descr').val();
     evID = $(this).attr('eventID');
