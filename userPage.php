@@ -17,14 +17,15 @@
 <?php
   include('./cookies.php');
 
-$id = $_POST['id'];
-$email = $_POST['email'];
-$name = $_POST['name'];
-$nameArray = explode(' ', $name);
+  $id = $_POST['id'];
+  $email = $_POST['email'];
+  $name = $_POST['name'];
+  $nameArray = explode(' ', $name);
 
   set_cookie($id);
+  echo $id;
 
-echo $nameArray[0].'!';
+  echo $nameArray[0].'!';
 ?>
 </h1>
 <br>
