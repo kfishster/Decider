@@ -28,6 +28,7 @@ Section 1: Models
     "eid"         : the parent event of the todo
     "tdid"        : unique todo id
     "title"       : the title of the todo
+    "pts"         : the points associated with the todo
     "location"    : partial location model associated with the todo
 }
 
@@ -38,6 +39,7 @@ Section 1: Models
     "tdid"        : unique todo id
     "description" : the description of the todo
     "title"       : the title of the todo
+    "pts"         : the points associated with the todo
     "location"    : location model associated with the todo
 }
 
