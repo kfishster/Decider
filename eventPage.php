@@ -37,7 +37,7 @@ foreach($rows as $todo)
 	echo '</div></div>';
 
 }
-echo '</div>';
+echo '</div></div>';
 
 echo '<br><p>Added by '.$event['Name'].'</p><br>';
 
