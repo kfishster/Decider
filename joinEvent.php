@@ -11,7 +11,7 @@
     $event = $_GET['id'];
 
     $query = 'INSERT INTO Participates VALUES('.$id.', '.$event.')';
-    $result = mysql_query($eventQuery) or die(mysql_error());
+    $result = mysql_query($query) or die(mysql_error());
 
     header( 'Location: /userPage.php?join=1' ) ;
   }
