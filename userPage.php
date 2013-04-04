@@ -18,20 +18,6 @@
     /* CUSTOMIZE THE NAVBAR
     -------------------------------------------------- */
 
-    /* Special class on .container surrounding .navbar, used for positioning it into place. */
-    .navbar-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 10;
-      margin-top: 20px;
-      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
-    }
-    .navbar-wrapper .navbar {
-
-    }
-
     /* Remove border and change up box shadow for more contrast */
     .navbar .navbar-inner {
       border: 0;
@@ -62,7 +48,7 @@
 </head>
 <body>
 
-<div class="navbar-wrapper">
+<div class="navbar">
   <div class="navbar-inner">
     <a class="brand" href="#">DecidR</a>
     <div class="pull-right">
