@@ -26,7 +26,7 @@ foreach($rows as $todo)
 	echo '<h4>'.$todo['Title'].'</h4>';
 	echo '<p>'.$todo['Description'].'</p><br>';
 }
-
+echo '<a id="newIdea" class="btn btn-info"><b>Add an idea</b></a>';
 
 echo '<br><p>Added by '.$event['Name'].'</p>'
 
