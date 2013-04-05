@@ -3966,7 +3966,7 @@ input[type="submit"].btn.btn-mini {
 .nav-header {
   display: block;
   padding: 3px 15px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   line-height: 21px;
   color: #999999;
@@ -6114,7 +6114,7 @@ a.badge:focus {
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 200;
   line-height: 31.5px;
   color: inherit;
