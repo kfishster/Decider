@@ -80,8 +80,8 @@
 
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class ="hero-unit">  
-      <div class="span4">
+    <div class="span4">
+      <div class ="hero-unit">  
         <div class="well">
           <ul class="nav nav-list" id="eventList">
             <li class="nav-header" id="getUserID" userID="<?php echo getUserFBId();?>">My Events</li>
