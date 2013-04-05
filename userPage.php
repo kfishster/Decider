@@ -82,7 +82,7 @@
   <div class="row-fluid">
     <div class="span4">
       <div class="well">
-      <ul class="nav nav-list bs-docs-sidenav affix" id="eventList">
+      <ul class="nav nav-list" id="eventList">
         <li class="nav-header" id="getUserID" userID="<?php echo getUserFBId();?>">My Events</li>
 
 <?php
