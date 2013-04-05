@@ -29,7 +29,7 @@
     /* Downsize the brand/project name a bit */
     .navbar .brand {
       padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
-      font-size: 16px;
+      font-size: 36px;
       font-weight: bold;
       text-shadow: 0 -1px 0 rgba(0,0,0,.5);
     }
