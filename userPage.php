@@ -154,7 +154,7 @@ $('.openEvent').click(function(){
 
       $(this).load('eventPage.php',{id:id} ,function(){
 
-        $(this).fadeIn("slow");
+        $(this).fadeIn();
 
         $('#newIdea').click(function(){
 
@@ -195,7 +195,7 @@ $('#submitEvent').submit(function(event){
 
             $(this).load('eventPage.php',{id:id} ,function(){
 
-              $(this).fadeIn("slow");
+              $(this).fadeIn();
           });
 
         });
@@ -208,7 +208,7 @@ $('#submitEvent').submit(function(event){
             $(this).load('eventPage.php',{id:data} ,function(){
 
               $('#createEventModal').modal('hide');
-              $(this).fadeIn("slow");
+              $(this).fadeIn();
           });
 
         });
@@ -249,7 +249,7 @@ $('#submitTodo').submit(function(event){
 
   
               });
-              $(this).fadeIn("slow");
+              $(this).fadeIn();
           });
 
         });
