@@ -112,7 +112,7 @@
     }
 
     foreach ($rows as $event) {
-      echo '<li><a class="openEvent" eventID="'.$event['EventID'].'">'.$event['Title'].'</a></li>';
+      echo '<li><a class="openEvent" href="" eventID="'.$event['EventID'].'">'.$event['Title'].'</a></li>';
     }
   
 
