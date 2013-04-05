@@ -1,8 +1,17 @@
+<!--
+userPage.php
+
+Second main page. Displays all events that this person is participating in on the left sidebar
+and asynchronously loads the event page on the right side.
+
+-->
+
 <?php
 
   include('./scripts/database_connection.php');
   include('./scripts/cookies.php');
 
+  //If cookies not calidated, throws person back to index.php
   if(!validate_cookie()) header('Location: index.php');
 
 ?>
@@ -12,7 +21,7 @@
 <head>
 	<script src="bootstrap/js/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.js"></script>
-<title>Decidr</title>
+<title>DecidR</title>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <style type="text/css">
@@ -74,6 +83,7 @@
 
 <?php
 
+      //Successful alert that shows up when join is successful
       if(isset($_GET['join']))
         echo '<div class="alert alert-success"><b>Successfully joined the event!</b> Check it out in the sidebar.</div>';
 ?>
@@ -88,8 +98,10 @@
 
 <?php
 
+
   $id = getUserFBId();
 
+  //Get user information from database
   $query = 'SELECT * FROM User WHERE FBid = ' . $id;
 
       
@@ -100,6 +112,7 @@
     }
 
 
+    //Get all events the person is participating in
     $query = 'SELECT * FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE FBid = ' . $id;
 
       
@@ -111,6 +124,7 @@
       $rows[$i] = $row;
     }
 
+    //Prints all events as bullets on the left sidebar
     foreach ($rows as $event) {
       echo '<li><a class="openEvent" href="#" eventID="'.$event['EventID'].'">'.$event['Title'].'</a></li>';
     }
@@ -138,6 +152,7 @@
 
 <script type="text/javascript">
 
+//When document loads, attaches a modal to the newEvent button
 $(document).ready(function(){
 $('#newEvent').click(function(){
 
@@ -146,7 +161,11 @@ $('#newEvent').click(function(){
   
 });
 
-
+/*
+Asynchronously loads the event information using an PHP endpoint
+Event page is thrown an eventID through POST and generates a page
+with all the event information. Page is loaded and faden in gracefully.
+*/
 $('.openEvent').click(function(){
 
   id = $(this).attr('eventID');
@@ -170,6 +189,11 @@ $('.openEvent').click(function(){
 
 });
 
+/*
+When event is created, send event information to addEvent.php which adds the event
+to the database. Once it is done, addEvent returns the eventID that was generated
+for this new event. The new event link is added to the sidebar upon completion.
+*/
 $('#submitEvent').submit(function(event){
     event.preventDefault();
     var $form = $(this);
@@ -218,6 +242,10 @@ $('#submitEvent').submit(function(event){
 
   });
 
+/*
+When todo has been created, send addTodo all the necessary information via POST
+and upon completetion, reload the event page.
+*/
 $('#submitTodo').submit(function(event){
     event.preventDefault();
     var $form = $(this);

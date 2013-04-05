@@ -1,3 +1,12 @@
+<!--
+eventPage.php
+
+Loads all the event's information including the title, description, date,
+and the list of toDos that belong to it. Also prints the creator of the 
+event and its participants.
+
+-->
+
 <?php
 
 
@@ -5,7 +14,9 @@ $id = $_POST['id'];
 
 include('./scripts/database_connection.php');
 
+//Retreives all the ToDos of the event
 $query = 'SELECT * FROM Has NATURAL JOIN Todo WHERE EventID = ' . $id;
+//Gets the admin of the event
 $eventQuery = 'SELECT * FROM Event INNER JOIN User ON Admin = FBid WHERE EventID = ' . $id;
 
       
@@ -24,6 +35,7 @@ echo '<h3>'.$event['Title'].'</h3><br>';
 
 if(!isset($rows)) echo '<p>There are no ideas for this event yet, be the first to propose something!</p>';
 
+//Accordion collapsible list of ToDos
 echo '<div class="accordion" id="accordion2">';
 
 foreach($rows as $todo)
@@ -43,6 +55,7 @@ echo '</div>';
 echo '<br><b><p>Event added by '.$event['Name'].'</p></b><br>';
 echo '<br><p>Participants: ';
 
+//Gets all the participants of the event
 $query = 'SELECT Name FROM Event NATURAL JOIN Participates NATURAL JOIN User WHERE Event.EventID = ' . $id;
 $result = mysql_query($query) or die(mysql_error());
 
@@ -67,6 +80,7 @@ foreach($rows as $person)
 
 echo '<a id="newIdea" class="btn btn-info"><b>Add an idea</b></a><br>';
 
+//Join link
 echo '<br><p>To add other people to this event, throw them this link:<br>';
 echo 'http://decider.azurewebsites.net/joinEvent.php?id=' . $id;
 echo '</p>';

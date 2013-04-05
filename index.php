@@ -1,3 +1,13 @@
+<!--
+index.php - Index
+
+The basis of the website, the default go to page. The page provides a way for users to get into the system
+via a Facebook login located in the upper right hand side. If cookies are validated, the login button becomes
+the logout button.
+
+If a querystring with an attribute 'error' is sent to this page, an error alert will come up.
+-->
+
 <!DOCTYPE html>
 
 <?php
@@ -99,6 +109,7 @@
 
         <?php
 
+         //If cookies are validated, show events and logout button, else show login with facebook button
          if(validate_cookie()) 
             {
               $name  = explode(' ', getUserName());
@@ -107,7 +118,7 @@
               echo '<li><a href="./scripts/signout.php">Logout '.$name[0].'</a></li>';
             }
          else
-              echo '<li><a id="loginFB">Login with Facebook</a></li>';
+              echo '<li><a id="loginFB" href="#">Login with Facebook</a></li>';
 
         ?>
         
@@ -121,6 +132,7 @@
 
       <?php
 
+      //Error alert that comes up from a wrong join redirection
       if(isset($_GET['error']))
         echo '<div class="alert alert-error"><b>You have to log in to join an event</b> Login is at the upper right section of the page!</div>';
       ?>
@@ -166,6 +178,8 @@
 
 <script>
 
+  /* FACEBOOK LOGIN API START */
+
   // Additional JS functions here
   window.fbAsyncInit = function() {
     FB.init({
@@ -199,26 +213,21 @@
         		email = response.email;
         		name = response.name;
 
+            //If login successful, register user and set cookie via signin php endpoint, then redirect to userPage
             $.post('./scripts/signin.php', {id: ID, email:email, name:name}, function(response){window.location = 'userPage.php';});
-        		
-        		//$('#inset_form').html('<form action="./userPage.php" name="send" method="post" style="display:none;"><input type="text" name="id" value="' + ID + '" /><input type="text" name="email" value="' + email + '" /><input type="text" name="name" value="' + name + '" /></form>');
-    			//document.forms['send'].submit();
+        	
 
         	}, { perms: 'email' });
            	
         } else {
-            // cancelled
+            // cancelled TODO show error
         }
     }, {scope: 'email'});
 	}
 
-	function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-        console.log('Good to see you, ' + response.id + '.');
-    });
-	}
+  /* FACEBOOK LOGIN API END */
 
+  //Attaches click functionality to login through fb button
 	$(document).ready(function(){
 		$('#loginFB').click(function(){ 
 			login();  

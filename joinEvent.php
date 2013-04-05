@@ -1,3 +1,10 @@
+<!--
+joinEvent.php
+
+AJAX PHP endpoint. Adds current user to the event participants. If validate user successful, sends user
+to the userpage with a successful join message. Else, sends to the index page with an error message.
+-->
+
 <?php
 
 
