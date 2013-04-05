@@ -82,7 +82,7 @@
   <div class="row-fluid">
     <div class="span4">
       <div class="well">
-      <ul class="nav nav-list" id="eventList">
+      <ul class="nav nav-list" id="eventList"><h3>
         <li class="nav-header" id="getUserID" userID="<?php echo getUserFBId();?>">My Events</li>
 
 <?php
@@ -116,7 +116,7 @@
   
 
 ?>
-    </ul>
+    </h3></ul>
     <ul class="nav nav-list">
     <li class="nav-header"></li>
     <li><a id="newEvent"><b>+ Create a new event</b></a></li>
