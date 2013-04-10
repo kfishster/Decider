@@ -167,7 +167,23 @@ function changeState(todo, num){
   down = $('.down[path="'+todo+'"]').attr('state') == '1';
   up = $('.up[path="'+todo+'"]').attr('state') == '1';
 
-  alert(down + ' ' + up);
+  if(down)
+  {
+    if(num == 1)
+      $('.down[path="'+todo+'"]').css('background-color', '');
+  }
+  else if(up)
+  {
+    if(num == -1)
+      $('.up[path="'+todo+'"]').css('background-color', '');
+  }
+  else
+  {
+    if(num == 1)
+      $('.up[path="'+todo+'"]').css('background-color', '#00aa00');
+    if(num == -1)
+      $('.down[path="'+todo+'"]').css('background-color', '#aa0000');
+  }
 
 }
 
