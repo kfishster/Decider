@@ -161,7 +161,7 @@ $('#newEvent').click(function(){
   
 });
 
-function changeState(obj, todo, num){
+function changeState(todo, num){
 
   alert('.down[path="'+todo+'"]');
 
