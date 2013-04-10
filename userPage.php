@@ -277,6 +277,14 @@ $('#submitTodo').submit(function(event){
 
   
               });
+
+              $('icon-thumbs-up').click(function(){
+                alert('Thumbs up for' + $(this).attr('path'));
+              });
+
+              $('icon-thumbs-down').click(function(){
+                alert('Thumbs down for' + $(this).attr('path'));
+              });
               $(this).fadeIn();
           });
 
