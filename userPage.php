@@ -165,8 +165,8 @@ function changeState(todo, num){
 
   alert('.down[path="'+todo+'"]');
 
-  down = $('.down[path="'+todo+'"]').css('background-color');
-  up = $('.up[path="'+todo+'"]').css('background-color');
+  down = $('.down[path="'+todo+'"]').css('background-color') != '#000000';
+  up = $('.up[path="'+todo+'"]').css('background-color') != '#000000';
 
   alert(down + ' ' + up);
 
