@@ -42,12 +42,10 @@ foreach($rows as $todo)
 {
 	$hash = hash('md4', $todo['Title'] + strval(rand()));
 	echo '<div class="accordion-group"> <div class="accordion-heading">';
-	echo '<div class"row-fluid"><div class="span10">';
-	echo '<h4><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$hash.'">';
-	echo $todo['Title'].'</a></h4>';
-	echo '</div>';
-	echo '<div class="span2">'.$todo['Points'].' points</div>';
+	echo '<div class="row-fluid"><div class="span10">';
+	echo '<h4><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$hash.'">'.$todo['Title'].'  |   '.$todo['Points'].' points</a></h4>';
 	echo '</div></div>';
+	echo '</div>';
 	
 	echo '<div id="'.$hash.'" class="accordion-body collapse"><div class="accordion-inner">';
 	echo '<p>'.$todo['Description'].'</p>';
