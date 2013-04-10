@@ -30,11 +30,13 @@ else, put it in the table.
     else
     {
       $query = 'UPDATE Points SET Point='.$point.' WHERE ToDoID='.$todo.';';
+      echo $query;
       
       $result = mysql_query($query) or die(mysql_error());
 
 
-      $query = 'UPDATE todo SET Points= Points + '.(2*$point).' WHERE ToDoID='.$todo.';';   
+      $query = 'UPDATE Todo SET Points= Points + '.(2*$point).' WHERE ToDoID='.$todo.';';   
+      echo $query;
 
       $result = mysql_query($query) or die(mysql_error());
 
