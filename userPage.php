@@ -183,7 +183,7 @@ $('.openEvent').click(function(){
         });
 
         $('.icon-thumbs-down').click(function(){
-          newNum = parseInt($('#' + $(this).attr('path') + 'num').text()) + 1;
+          newNum = parseInt($('#' + $(this).attr('path') + 'num').text()) - 1;
           $('#' + $(this).attr('path') + 'num').text(newNum);
         });
 
