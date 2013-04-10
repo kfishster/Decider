@@ -44,7 +44,9 @@ echo '<div class="accordion" id="accordion2">';
 foreach($rows as $todo)
 {
 	$query = 'SELECT Point FROM Points WHERE FBid = '.$userID.' AND TodoID = '.$todo['TodoID'].';'; 
-	$point = mysql_fetch_assoc($query);
+	$result = mysql_query($query) or die(mysql_error());
+
+	$point = mysql_fetch_assoc($result);
 	echo $query;
 	var_dump($point);
 	$num = intval($point['Point']);
