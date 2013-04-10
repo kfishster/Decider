@@ -180,6 +180,14 @@ $('.openEvent').click(function(){
           $('#submitTodo').attr('eventID', id);
           $('#createTodoModal').modal('show');
 
+          $('.icon-thumbs-up').click(function(){
+                alert('Thumbs up for' + $(this).attr('path'));
+              });
+
+          $('.icon-thumbs-down').click(function(){
+            alert('Thumbs down for' + $(this).attr('path'));
+          });
+
   
         });
 
@@ -277,8 +285,6 @@ $('#submitTodo').submit(function(event){
 
   
               });
-
-              $(i).click(function(){alert('aaa');});
 
               $('.icon-thumbs-up').click(function(){
                 alert('Thumbs up for' + $(this).attr('path'));
