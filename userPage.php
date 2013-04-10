@@ -213,7 +213,7 @@ $('.openEvent').click(function(){
             dataArr = data.split('\n');
             newNum += parseInt(dataArr[0]);
             obj.text(newNum);
-            changeState(path, 2);
+            changeState(path, parseInt(dataArr[0]));
 
           });
           
