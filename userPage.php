@@ -166,7 +166,7 @@ function changeState(obj, num){
   down = obj.css('background-color') != '';
   up = obj.css('background-color') != '';
 
-  alert(down + ' ' + up);
+  alert(obj.css('background-color') + ' ' + up);
 
 }
 
