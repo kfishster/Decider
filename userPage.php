@@ -194,7 +194,7 @@ $('.openEvent').click(function(){
             dataArr = data.split('\n');
             newNum += parseInt(dataArr[0]);
             obj.text(newNum);
-            changeState(obj, 2);
+            changeState($(this), 2);
 
           });
           
