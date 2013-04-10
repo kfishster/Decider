@@ -164,8 +164,8 @@ $('#newEvent').click(function(){
 function changeState(todo, num){
 
 
-  down = $('.down[path="'+todo+'"]').attr('state');
-  up = $('.up[path="'+todo+'"]').attr('state');
+  down = $('.down[path="'+todo+'"]').attr('state') == '1';
+  up = $('.up[path="'+todo+'"]').attr('state') == '1';
 
   alert(down + ' ' + up);
 
