@@ -183,7 +183,8 @@ $('.openEvent').click(function(){
         });
 
         $('.icon-thumbs-down').click(function(){
-          alert('Thumbs down for' + $(this).attr('path'));
+          newNum = parseInt($('#' + $(this).attr('path') + 'num').text()) + 1;
+          $('#' + $(this).attr('path') + 'num').text(newNum);
         });
 
         $('#newIdea').click(function(){

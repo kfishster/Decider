@@ -44,7 +44,7 @@ foreach($rows as $todo)
 	echo '<div class="accordion-group"> <div class="accordion-heading">';
 	echo '<div class="row-fluid"><div class="span10">';
 	echo '<h4><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$hash.'">'.$todo['Title'].'</a></h4>';
-	echo '</div><div class="span2"><h4><i class="icon-thumbs-up" path="'.$todo['TodoID'].'" href="#"></i>&nbsp;&nbsp;<span id="'.$todo['TodoID'].'num">'.$todo['Points'].'</span>&nbsp;&nbsp;<i class="icon-thumbs-down" path="'.$todo['TodoID'].'" href="#"></i></h4></div></div>';
+	echo '</div><div class="span2"><h3><i class="icon-thumbs-up" path="'.$todo['TodoID'].'" href="#"></i>&nbsp;&nbsp;<span id="'.$todo['TodoID'].'num">'.$todo['Points'].'</span>&nbsp;&nbsp;<i class="icon-thumbs-down" path="'.$todo['TodoID'].'" href="#"></i></h3></div></div>';
 	echo '</div>';
 	
 	echo '<div id="'.$hash.'" class="accordion-body collapse"><div class="accordion-inner">';
