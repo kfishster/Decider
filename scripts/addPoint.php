@@ -29,7 +29,7 @@ else, put it in the table.
       echo 0;
     else
     {
-      $query = 'UPDATE Points SET Point='.$point.' WHERE ToDoID='.$todo.';';
+      $query = 'UPDATE Points SET Point='.$point.' WHERE ToDoID='.$todo.' AND FBid = '.$userID.';';
       
       $result = mysql_query($query) or die(mysql_error());
 
