@@ -278,6 +278,8 @@ $('#submitTodo').submit(function(event){
   
               });
 
+              $('i').click(function(){alert('aaa');});
+
               $('.icon-thumbs-up').click(function(){
                 alert('Thumbs up for' + $(this).attr('path'));
               });
