@@ -24,7 +24,7 @@ else, put it in the table.
   $rows =  mysql_fetch_assoc($result);
 
       var_dump($rows);
-  if(isset($rows))
+  if($rows)
   {
     if(intval($rows['Point']) == $point)
       echo 0;
