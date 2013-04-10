@@ -177,8 +177,7 @@ $('.openEvent').click(function(){
 
         $('.icon-thumbs-up').click(function(){
 
-          newNum = parseInt($('#' + $(this).attr('path') + 'num').text());
-          alert(newNum);
+          newNum = parseInt($('#' + $(this).attr('path') + 'num').text()) + 1;
           $('#' + $(this).attr('path') + 'num').text(newNum);
           
         });
