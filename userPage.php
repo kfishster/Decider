@@ -163,8 +163,8 @@ $('#newEvent').click(function(){
 
 function changeState(obj, todo, num){
 
-  down = $('.down[path="'.todo.'""]').css('background-color');
-  up = $('.up[path="'.todo.'""]').css('background-color');
+  down = $('.down[path="'+todo+'"]').css('background-color');
+  up = $('.up[path="'+todo+'"]').css('background-color');
 
   alert(down + ' ' + up);
 
