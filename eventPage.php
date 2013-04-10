@@ -51,8 +51,8 @@ foreach($rows as $todo)
 	$num = intval($point['Point']);
 	
 	
-	$plus = '#000000';
-	$minus = '#000000';
+	//$plus = '#000000';
+	//$minus = '#000000';
 	if($num === -1)
 		$minus = '#aa0000';
 	else if($num === 1)
@@ -62,7 +62,7 @@ foreach($rows as $todo)
 	echo '<div class="accordion-group"> <div class="accordion-heading">';
 	echo '<div class="row-fluid"><div class="span10">';
 	echo '<h4><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$hash.'">'.$todo['Title'].'</a></h4>';
-	echo '</div><div class="span2"><h3><span class="up" path="'.$todo['TodoID'].'" href="#" style="background-color: '.$plus.';">+</span>&nbsp;&nbsp;<span id="'.$todo['TodoID'].'num">'.$todo['Points'].'</span>&nbsp;&nbsp;<span class="down" path="'.$todo['TodoID'].'" href="#" style="background-color: '.$minus.';">-</span></h3></div></div>';
+	echo '</div><div class="span2"><h3><span class="up" path="'.$todo['TodoID'].'" href="#" style="background-color: '.$plus.';">+</span>&nbsp;&nbsp;<span id="'.$todo['TodoID'].'num">'.$todo['Points'].'</span>&nbsp;&nbsp;<span class="down" path="'.$todo['TodoID'].'" href="#" style="background-color: '.$minus.';">--</span></h3></div></div>';
 	echo '</div>';
 	
 	echo '<div id="'.$hash.'" class="accordion-body collapse"><div class="accordion-inner">';
