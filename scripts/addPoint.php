@@ -23,6 +23,7 @@ else, put it in the table.
   $result = mysql_query($query) or die(mysql_error());
   $rows =  mysql_fetch_assoc($result);
 
+      var_dump($rows);
   if(isset($rows))
   {
     if(intval($rows['Point']) == $point)
