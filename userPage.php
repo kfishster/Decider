@@ -161,10 +161,10 @@ $('#newEvent').click(function(){
   
 });
 
-function changeState(obj, num){
+function changeState(obj, todo, num){
 
-  down = obj.css('background-color');
-  up = obj.css('background-color');
+  down = $('.down[path="'.todo.'""]').css('background-color');
+  up = $('.up[path="'.todo.'""]').css('background-color');
 
   alert(down + ' ' + up);
 
@@ -188,14 +188,14 @@ $('.openEvent').click(function(){
 
           newNum = parseInt($('#' + $(this).attr('path') + 'num').text());
           obj = $('#' + $(this).attr('path') + 'num');
-          changeobj = $(this);
+          
 
           $.post('scripts/addPoint.php', {todo: $(this).attr('path'), userID: $('#getUserID').attr('userID'), point: '1'}, function(data){
 
             dataArr = data.split('\n');
             newNum += parseInt(dataArr[0]);
             obj.text(newNum);
-            changeState(changeobj, 2);
+            changeState($(this).attr('path'), 2);
 
           });
           
