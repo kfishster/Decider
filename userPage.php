@@ -164,8 +164,8 @@ $('#newEvent').click(function(){
 function changeState(todo, num){
 
 
-  down = $('.down[path="'+todo+'"]').css('background-color') != '#000000';
-  up = $('.up[path="'+todo+'"]').css('background-color') != '#000000';
+  down = $('.down[path="'+todo+'"]').css('background-color') != 'rgb(0, 0, 0)';
+  up = $('.up[path="'+todo+'"]').css('background-color') != 'rgb(0, 0, 0)';
 
   alert(down + ' ' + up);
 
