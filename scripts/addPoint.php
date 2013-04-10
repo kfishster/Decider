@@ -1,11 +1,14 @@
-<!--
+<?php
+
+/*
+
 addPoint.php
 
 If point on this todo from the user was already submitted, then change the existing entry
 else, put it in the table.
--->
 
-<?php
+*/
+
 
   include('database_connection.php');
 
@@ -26,7 +29,7 @@ else, put it in the table.
       echo 0;
     else
     {
-      $query = 'UPDATE Points SET Point='.$point.' WHERE ToDoID='.$todo.'; UPDATE Todo SET Points='.(intval($rows['Points']) + 2*$point).' WHERE ToDoID='.$todo.';';   
+      $query = 'UPDATE Points SET Point='.$point.' WHERE ToDoID='.$todo.'; UPDATE todo SET Points='.(intval($rows['Points']) + 2*$point).' WHERE ToDoID='.$todo.';';   
 
       $result = mysql_query($query) or die(mysql_error());
 
