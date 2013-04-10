@@ -188,14 +188,15 @@ $('.openEvent').click(function(){
 
           newNum = parseInt($('#' + $(this).attr('path') + 'num').text());
           obj = $('#' + $(this).attr('path') + 'num');
+          path = $(this).attr('path');
           
 
-          $.post('scripts/addPoint.php', {todo: $(this).attr('path'), userID: $('#getUserID').attr('userID'), point: '1'}, function(data){
+          $.post('scripts/addPoint.php', {todo: path, userID: $('#getUserID').attr('userID'), point: '1'}, function(data){
 
             dataArr = data.split('\n');
             newNum += parseInt(dataArr[0]);
             obj.text(newNum);
-            changeState($(this).attr('path'), 2);
+            changeState(path, 2);
 
           });
           
