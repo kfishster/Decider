@@ -177,12 +177,11 @@ $('.openEvent').click(function(){
 
         $('.icon-thumbs-up').click(function(){
 
+          newNum = parseInt($('#' + $(this).attr('path') + 'num').text()) ;
+
           $.post('scripts/addPoint.php', {todo: $(this).attr('path'), userID: $('#getUserID').attr('userID'), point: '1'}, function(data){
 
-            newNum = parseInt($('#' + $(this).attr('path') + 'num').text()) ;
-            alert(newNum);
             newNum += parseInt(data);
-            alert(newNum);
             $('#' + $(this).attr('path') + 'num').text(newNum);
 
           });
@@ -191,9 +190,12 @@ $('.openEvent').click(function(){
         });
 
         $('.icon-thumbs-down').click(function(){
+
+          newNum = parseInt($('#' + $(this).attr('path') + 'num').text()) ;
+
           $.post('scripts/addPoint.php', {todo: $(this).attr('path'), userID: $('#getUserID').attr('userID'), point: '-1'}, function(data){
 
-            newNum = parseInt($('#' + $(this).attr('path') + 'num').text()) + parseInt(data);
+            newNum += parseInt(data);
             $('#' + $(this).attr('path') + 'num').text(newNum);
 
           });
