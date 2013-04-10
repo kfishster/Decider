@@ -47,10 +47,11 @@ foreach($rows as $todo)
 	$result = mysql_query($query) or die(mysql_error());
 
 	$point = mysql_fetch_assoc($result);
-	echo $query;
-	var_dump($point);
+	
 	$num = intval($point['Point']);
+	
 	echo $num;
+	
 	$plus = '#000000';
 	$minus = '#000000';
 	if($num === -1)
