@@ -47,6 +47,7 @@ foreach($rows as $todo)
 	$rows = mysql_fetch_assoc($result);
 
 	$num = intval($rows['Point']);
+	echo $num;
 	$plus = '#000000';
 	$minus = '#000000';
 	if($num == -1)
