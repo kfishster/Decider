@@ -1,11 +1,12 @@
-<!--
+<?php
+
+/*
+
 addEvent.php
 
 Adds the event to the database and returns its eventID
 
--->
-
-<?php
+*/
 
   include('database_connection.php');
 

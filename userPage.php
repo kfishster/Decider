@@ -171,7 +171,7 @@ $('.openEvent').click(function(){
   id = $(this).attr('eventID');
   $('#eventContent').fadeOut("slow", function(){
 
-      $(this).load('eventPage.php',{id:id} ,function(){
+      $(this).load('eventPage.php',{id:id, userID: $('#getUserID').attr('userID')} ,function(){
 
         $(this).fadeIn();
 
@@ -254,7 +254,7 @@ $('#submitEvent').submit(function(event){
         id = $(this).attr('eventID');
         $('#eventContent').fadeOut("slow", function(){
 
-            $(this).load('eventPage.php',{id:id} ,function(){
+            $(this).load('eventPage.php',{id:id, userID: $('#getUserID').attr('userID')} ,function(){
 
               $(this).fadeIn();
           });
@@ -266,7 +266,7 @@ $('#submitEvent').submit(function(event){
        $('#eventContent').fadeOut("slow", function(){
           
 
-            $(this).load('eventPage.php',{id:data} ,function(){
+            $(this).load('eventPage.php',{id:data, userID: $('#getUserID').attr('userID')} ,function(){
 
               $('#createEventModal').modal('hide');
               $(this).fadeIn();
@@ -305,7 +305,7 @@ $('#submitTodo').submit(function(event){
 
        $('#eventContent').fadeOut("slow", function(){
 
-            $(this).load('eventPage.php',{id:evID} ,function(){
+            $(this).load('eventPage.php',{id:evID, userID: $('#getUserID').attr('userID')} ,function(){
 
               $('#newIdea').click(function(){
 
