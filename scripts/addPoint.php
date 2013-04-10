@@ -12,7 +12,7 @@ else, put it in the table.
 
   $todo = $_POST['todo'];
   $userID = $_POST['userID'];
-  $point = intval($_POST['userID']);
+  $point = intval($_POST['point']);
 
   //Retrieves the event to display the ID
   $query = 'SELECT * FROM Points WHERE FBid = '.$userID.' AND TodoID = "'.$todo.'";';  
