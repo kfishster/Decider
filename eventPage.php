@@ -15,9 +15,9 @@ $id = $_POST['id'];
 include('./scripts/database_connection.php');
 
 //Retreives all the ToDos of the event
-$query = 'SELECT * FROM Has NATURAL JOIN Todo WHERE EventID = ' . $id;
+$query = 'SELECT * FROM Has NATURAL JOIN Todo WHERE EventID = ' . $id ' ORDER BY Points DESC';
 //Gets the admin of the event
-$eventQuery = 'SELECT * FROM Event INNER JOIN User ON Admin = FBid WHERE EventID = ' . $id . ' ORDER BY Points DESC';
+$eventQuery = 'SELECT * FROM Event INNER JOIN User ON Admin = FBid WHERE EventID = ' . $id;
 
       
 $result = mysql_query($query) or die(mysql_error());
