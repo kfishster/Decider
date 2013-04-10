@@ -163,10 +163,10 @@ $('#newEvent').click(function(){
 
 function changeState(obj, num){
 
-  down = obj.css('background-color') != '';
-  up = obj.css('background-color') != '';
+  down = obj.css('background-color') == '#aa0000';
+  up = obj.css('background-color') == '#00aa00';
 
-  alert(obj.css('background-color') + ' ' + up);
+  alert(down + ' ' + up);
 
 }
 
