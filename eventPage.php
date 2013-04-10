@@ -40,6 +40,7 @@ echo '<div class="accordion" id="accordion2">';
 
 foreach($rows as $todo)
 {
+	var_dump($todo);
 	$hash = hash('md4', $todo['Title'] + strval(rand()));
 	echo '<div class="accordion-group"> <div class="accordion-heading">';
 	echo '<div class="row-fluid"><div class="span10">';
