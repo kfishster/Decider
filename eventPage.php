@@ -45,7 +45,7 @@ foreach($rows as $todo)
 {
 	$query = 'SELECT Point FROM Points WHERE FBid = '.$userID.' AND TodoID = "'.$todo['TodoID'].'";'; 
 	$rows = mysql_fetch_assoc($result);
-	echo $query;
+	var_dump($rows);
 	$num = intval($rows['Point']);
 	echo $num;
 	$plus = '#000000';
