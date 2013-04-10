@@ -46,8 +46,10 @@ foreach($rows as $todo)
 	echo '</div>';
 	
 	echo '<div id="'.$hash.'" class="accordion-body collapse"><div class="accordion-inner">';
-	echo '<p>'.$todo['Description'].'</p>';
-	echo '</div></div></div><br>';
+	echo '<div class"row-fluid"><div class="span9">';
+	echo '<p>'.$todo['Description'].'</p></div>';
+	echo '<div class="span3">+ -</div>';
+	echo '</div></div></div></div><br>';
 
 }
 echo '</div>';
