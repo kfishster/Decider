@@ -11,6 +11,7 @@ event and its participants.
 
 
 $id = $_POST['id'];
+$userID = $_POST['userID'];
 
 include('./scripts/database_connection.php');
 
@@ -33,6 +34,8 @@ $event = mysql_fetch_assoc($result);
 echo '<h3>'.$event['Title'].'</h3><br>';
 
 
+
+
 if(!isset($rows)) echo '<p>There are no ideas for this event yet, be the first to propose something!</p>';
 
 //Accordion collapsible list of ToDos
@@ -40,11 +43,22 @@ echo '<div class="accordion" id="accordion2">';
 
 foreach($rows as $todo)
 {
+	$query = 'SELECT Point FROM Points WHERE FBid = '.$userID.' AND TodoID = "'.$todo['TodoID'].'";'; 
+	$rows = mysql_fetch_assoc($result);
+
+	$num = intval($rows);
+	$plus = '#000000';
+	$minus = '#000000';
+	if($num == -1)
+		$minus = '#550000';
+	else if($num == 1)
+		$plus = '#005500';		
+	
 	$hash = hash('md4', $todo['Title'] + strval(rand()));
 	echo '<div class="accordion-group"> <div class="accordion-heading">';
 	echo '<div class="row-fluid"><div class="span10">';
 	echo '<h4><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$hash.'">'.$todo['Title'].'</a></h4>';
-	echo '</div><div class="span2"><h3><i class="icon-thumbs-up" path="'.$todo['TodoID'].'" href="#"></i>&nbsp;&nbsp;<span id="'.$todo['TodoID'].'num">'.$todo['Points'].'</span>&nbsp;&nbsp;<i class="icon-thumbs-down" path="'.$todo['TodoID'].'" href="#"></i></h3></div></div>';
+	echo '</div><div class="span2"><h3><a class="up" path="'.$todo['TodoID'].'" href="#" style="color: $plus;">+</a>&nbsp;&nbsp;<span id="'.$todo['TodoID'].'num">'.$todo['Points'].'</span>&nbsp;&nbsp;<a class="down" path="'.$todo['TodoID'].'" href="#" style="color: $minus;">-</a></h3></div></div>';
 	echo '</div>';
 	
 	echo '<div id="'.$hash.'" class="accordion-body collapse"><div class="accordion-inner">';

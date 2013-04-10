@@ -175,7 +175,7 @@ $('.openEvent').click(function(){
 
         $(this).fadeIn();
 
-        $('.icon-thumbs-up').click(function(){
+        $('.up').click(function(){
 
           newNum = parseInt($('#' + $(this).attr('path') + 'num').text());
           obj = $('#' + $(this).attr('path') + 'num');
@@ -195,7 +195,7 @@ $('.openEvent').click(function(){
           
         });
 
-        $('.icon-thumbs-down').click(function(){
+        $('.down').click(function(){
 
           newNum = parseInt($('#' + $(this).attr('path') + 'num').text());
           obj = $('#' + $(this).attr('path') + 'num');
