@@ -25,7 +25,7 @@ else, put it in the table.
 
   if(isset($rows))
   {
-    if(intval($rows['Points']) == $point)
+    if(intval($rows['Point']) == $point)
       echo 0;
     else
     {
@@ -44,7 +44,7 @@ else, put it in the table.
   {
     $query = 'INSERT INTO Points VALUES('.$todo.', '.$userID.', '.$point.'); ';
     $result = mysql_query($query) or die(mysql_error());
-    
+
     $query = 'UPDATE Todo SET Points='.(intval($rows['Points']) + $point).' WHERE ToDoID='.$todo.';';
 
     $result = mysql_query($query) or die(mysql_error());
