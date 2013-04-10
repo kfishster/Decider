@@ -173,19 +173,31 @@ function changeState(todo, num){
   if(down)
   {
     if(num == 1)
+    {
       $('.down[path="'+todo+'"]').css('background-color', '');
+      $('.down[path="'+todo+'"]').attr('state', '');
+    }
   }
   else if(up)
   {
     if(num == -1)
+    {
       $('.up[path="'+todo+'"]').css('background-color', '');
+      $('.up[path="'+todo+'"]').attr('state', '');
+    }
   }
   else
   {
     if(num == 1)
+    {
       $('.up[path="'+todo+'"]').css('background-color', '#00aa00');
+      $('.up[path="'+todo+'"]').attr('state', '1');
+    }
     if(num == -1)
+    {
       $('.down[path="'+todo+'"]').css('background-color', '#aa0000');
+      $('.down[path="'+todo+'"]').attr('state', '1');
+    }
   }
 
 }
