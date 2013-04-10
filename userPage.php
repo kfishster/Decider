@@ -183,7 +183,9 @@ $('.openEvent').click(function(){
           $.post('scripts/addPoint.php', {todo: $(this).attr('path'), userID: $('#getUserID').attr('userID'), point: '1'}, function(data){
 
             dataArr = data.split('\n');
-            console.log(data + ' ' + dataArr);
+
+            console.log(data);
+           
             newNum += parseInt(dataArr[0]);
 
             obj.text(newNum);
@@ -201,6 +203,7 @@ $('.openEvent').click(function(){
           $.post('scripts/addPoint.php', {todo: $(this).attr('path'), userID: $('#getUserID').attr('userID'), point: '-1'}, function(data){
 
             dataArr = data.split('\n');
+            console.log(data);
             newNum += parseInt(dataArr[0]);
 
             obj.text(newNum);
