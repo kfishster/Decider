@@ -23,7 +23,6 @@ else, put it in the table.
   $result = mysql_query($query) or die(mysql_error());
   $rows =  mysql_fetch_assoc($result);
 
-      var_dump($rows);
   if($rows)
   {
     if(intval($rows['Point']) == $point)
@@ -34,7 +33,8 @@ else, put it in the table.
       
       $result = mysql_query($query) or die(mysql_error());
 
-      $query = 'UPDATE todo SET Points='.(intval($rows['Points']) + 2*$point).' WHERE ToDoID='.$todo.';';   
+
+      $query = 'UPDATE todo SET Points= Points + '.(2*$point).' WHERE ToDoID='.$todo.';';   
 
       $result = mysql_query($query) or die(mysql_error());
 
@@ -45,8 +45,8 @@ else, put it in the table.
   {
     $query = 'INSERT INTO Points VALUES('.$todo.', '.$userID.', '.$point.'); ';
     $result = mysql_query($query) or die(mysql_error());
-
-    $query = 'UPDATE Todo SET Points='.(intval($rows['Points']) + $point).' WHERE ToDoID='.$todo.';';
+    
+    $query = 'UPDATE Todo SET Points= Points + '.$point.' WHERE ToDoID='.$todo.';';
 
     $result = mysql_query($query) or die(mysql_error());
 
