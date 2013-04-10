@@ -176,7 +176,10 @@ $('.openEvent').click(function(){
         $(this).fadeIn();
 
         $('.icon-thumbs-up').click(function(){
-          alert('Thumbs up for' + $(this).attr('path'));
+
+          newNum = parseInt($('#' + $(this).attr('path') + 'num').text());
+          $('#' + $(this).attr('path') + 'num').text(newNum);
+          
         });
 
         $('.icon-thumbs-down').click(function(){
