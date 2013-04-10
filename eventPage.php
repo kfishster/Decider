@@ -54,9 +54,9 @@ foreach($rows as $todo)
 	$plus = '#000000';
 	$minus = '#000000';
 	if($num === -1)
-		$minus = '#550000';
+		$minus = '#aa0000';
 	else if($num === 1)
-		$plus = '#005500';		
+		$plus = '#00aa00';		
 	
 	$hash = hash('md4', $todo['Title'] + strval(rand()));
 	echo '<div class="accordion-group"> <div class="accordion-heading">';
