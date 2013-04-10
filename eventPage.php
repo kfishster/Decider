@@ -40,12 +40,11 @@ echo '<div class="accordion" id="accordion2">';
 
 foreach($rows as $todo)
 {
-	var_dump($todo);
 	$hash = hash('md4', $todo['Title'] + strval(rand()));
 	echo '<div class="accordion-group"> <div class="accordion-heading">';
 	echo '<div class="row-fluid"><div class="span10">';
 	echo '<h4><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$hash.'">'.$todo['Title'].'</a></h4>';
-	echo '</div><div class="span2"><h4><i class="icon-thumbs-up" path="'.$todo['ToDoID'].'"></i>  '.$todo['Points'].' points  <i class="icon-thumbs-down" path="'.$todo['ToDoID'].'"></i></h4></div></div>';
+	echo '</div><div class="span2"><h4><i class="icon-thumbs-up" path="'.$todo['TodoID'].'"></i>&nbsp;&nbsp;'.$todo['Points'].' points&nbsp;&nbsp;<i class="icon-thumbs-down" path="'.$todo['TodoID'].'"></i></h4></div></div>';
 	echo '</div>';
 	
 	echo '<div id="'.$hash.'" class="accordion-body collapse"><div class="accordion-inner">';
