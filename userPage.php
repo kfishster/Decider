@@ -161,6 +161,15 @@ $('#newEvent').click(function(){
   
 });
 
+function changeState(obj, num){
+
+  down = obj.css('background-color') != '#000000';
+  up = obj.css('background-color') != '#000000';
+
+  alert(down + ' ' + up);
+
+}
+
 /*
 Asynchronously loads the event information using an PHP endpoint
 Event page is thrown an eventID through POST and generates a page
@@ -183,12 +192,9 @@ $('.openEvent').click(function(){
           $.post('scripts/addPoint.php', {todo: $(this).attr('path'), userID: $('#getUserID').attr('userID'), point: '1'}, function(data){
 
             dataArr = data.split('\n');
-
-            console.log(data);
-           
             newNum += parseInt(dataArr[0]);
-
             obj.text(newNum);
+            changeState(obj, 2);
 
           });
           
@@ -203,9 +209,7 @@ $('.openEvent').click(function(){
           $.post('scripts/addPoint.php', {todo: $(this).attr('path'), userID: $('#getUserID').attr('userID'), point: '-1'}, function(data){
 
             dataArr = data.split('\n');
-            console.log(data);
             newNum += parseInt(dataArr[0]);
-
             obj.text(newNum);
 
 
