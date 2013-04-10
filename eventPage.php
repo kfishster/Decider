@@ -45,14 +45,14 @@ foreach($rows as $todo)
 {
 	$query = 'SELECT Point FROM Points WHERE FBid = '.$userID.' AND TodoID = "'.$todo['TodoID'].'";'; 
 	$rows = mysql_fetch_assoc($result);
-
+	echo $query;
 	$num = intval($rows['Point']);
 	echo $num;
 	$plus = '#000000';
 	$minus = '#000000';
-	if($num == -1)
+	if($num === -1)
 		$minus = '#550000';
-	else if($num == 1)
+	else if($num === 1)
 		$plus = '#005500';		
 	
 	$hash = hash('md4', $todo['Title'] + strval(rand()));
