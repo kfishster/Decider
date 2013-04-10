@@ -1,11 +1,13 @@
-<!--
+<?php
+
+/*
+
 database_connection.php
 
 Connects to the Decider database, uses set credentials.
 
--->
+*/
 
-<?php
 
 $dbhost = "us-cdbr-azure-east-b.cloudapp.net";
 $dbuser = "b1700f50bf2ed7";

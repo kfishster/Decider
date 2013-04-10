@@ -29,7 +29,11 @@ else, put it in the table.
       echo 0;
     else
     {
-      $query = 'UPDATE Points SET Point='.$point.' WHERE ToDoID='.$todo.'; UPDATE todo SET Points='.(intval($rows['Points']) + 2*$point).' WHERE ToDoID='.$todo.';';   
+      $query = 'UPDATE Points SET Point='.$point.' WHERE ToDoID='.$todo.';';
+      
+      $result = mysql_query($query) or die(mysql_error());
+
+      $query = 'UPDATE todo SET Points='.(intval($rows['Points']) + 2*$point).' WHERE ToDoID='.$todo.';';   
 
       $result = mysql_query($query) or die(mysql_error());
 
@@ -38,7 +42,10 @@ else, put it in the table.
   }
   else
   {
-    $query = 'INSERT INTO Points VALUES('.$todo.', '.$userID.', '.$point.'); UPDATE Todo SET Points='.(intval($rows['Points']) + $point).' WHERE ToDoID='.$todo.';';
+    $query = 'INSERT INTO Points VALUES('.$todo.', '.$userID.', '.$point.'); ';
+    $result = mysql_query($query) or die(mysql_error());
+    
+    $query = 'UPDATE Todo SET Points='.(intval($rows['Points']) + $point).' WHERE ToDoID='.$todo.';';
 
     $result = mysql_query($query) or die(mysql_error());
 
