@@ -183,7 +183,7 @@ $('.openEvent').click(function(){
           $.post('scripts/addPoint.php', {todo: $(this).attr('path'), userID: $('#getUserID').attr('userID'), point: '1'}, function(data){
 
             dataArr = data.split(' ');
-            alert(dataArr);
+            alert(dataArr[0]);
             newNum += data;
 
             obj.text(newNum);
