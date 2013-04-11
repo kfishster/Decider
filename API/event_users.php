@@ -7,7 +7,7 @@
   $query = 'SELECT  FBid as fbid, 
                     Email as email,
                     Name as name
-                    FROM Event NATURAL JOIN Participates NATURAL JOIN User WHERE Event.EventID = ' . $id;
+                    FROM Event NATURAL JOIN Participates NATURAL JOIN User WHERE Event.EventID = ' . $eid;
 
   jsonify($query, 'users');
 
