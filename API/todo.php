@@ -9,7 +9,7 @@
                     Description as description,
                     Title as title,
                     Points as pts
-                    FROM Todo WHERE ToDoID = ' . $tdid;
+                    FROM Todo NATURAL JOIN Has WHERE ToDoID = ' . $tdid;
 
   jsonify($query, 'todo');
 

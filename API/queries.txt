@@ -98,7 +98,7 @@ Section 2: Queries
 		   }
 }
 
-
+#--Implemented--No location--#
 ### Get Todo [GET] https://decider.azurewindows.com/api/todo.php
 # Required
     tdid    : the id of the todo
@@ -124,7 +124,7 @@ Section 2: Queries
 		   }
 }
 
-
+#--Implemented--#
 ### Get User [GET] https://decider.azurewindows.com/api/user.php
 # Required
     fid    : the Facebook id of the user
