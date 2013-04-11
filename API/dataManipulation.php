@@ -1,5 +1,7 @@
 <?php
 
+include('database_connection.php');
+
 function jsonify($query){
 
   $result = mysql_query($query) or die(mysql_error());
