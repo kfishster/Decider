@@ -206,6 +206,41 @@ $('#submitEvent').submit(function(event){
             $(this).load('eventPage.php',{id:id, userID: $('#getUserID').attr('userID')} ,function(){
 
               $(this).fadeIn();
+              $('.up').click(function(){
+
+		          newNum = parseInt($('#' + $(this).attr('path') + 'num').text());
+		          obj = $('#' + $(this).attr('path') + 'num');
+		          path = $(this).attr('path');
+		          
+
+		          $.post('scripts/addPoint.php', {todo: path, userID: $('#getUserID').attr('userID'), point: '1'}, function(data){
+
+		            dataArr = data.split('\n');
+		            newNum += parseInt(dataArr[0]);
+		            obj.text(newNum);
+		            changeState(path, parseInt(dataArr[0]));
+
+		          });
+		          
+		          
+		        });
+
+		        $('.down').click(function(){
+
+		          newNum = parseInt($('#' + $(this).attr('path') + 'num').text());
+		          obj = $('#' + $(this).attr('path') + 'num');
+		          path = $(this).attr('path');
+
+		          $.post('scripts/addPoint.php', {todo: $(this).attr('path'), userID: $('#getUserID').attr('userID'), point: '-1'}, function(data){
+
+		            dataArr = data.split('\n');
+		            newNum += parseInt(dataArr[0]);
+		            obj.text(newNum);
+		            changeState(path, parseInt(dataArr[0]));
+
+
+		          });
+		        });
           });
 
         });
@@ -264,13 +299,41 @@ $('#submitTodo').submit(function(event){
   
               });
 
-              $('.icon-thumbs-up').click(function(){
-                alert('Thumbs up for' + $(this).attr('path'));
-              });
+              $('.up').click(function(){
 
-              $('.icon-thumbs-down').click(function(){
-                alert('Thumbs down for' + $(this).attr('path'));
-              });
+		          newNum = parseInt($('#' + $(this).attr('path') + 'num').text());
+		          obj = $('#' + $(this).attr('path') + 'num');
+		          path = $(this).attr('path');
+		          
+
+		          $.post('scripts/addPoint.php', {todo: path, userID: $('#getUserID').attr('userID'), point: '1'}, function(data){
+
+		            dataArr = data.split('\n');
+		            newNum += parseInt(dataArr[0]);
+		            obj.text(newNum);
+		            changeState(path, parseInt(dataArr[0]));
+
+		          });
+		          
+		          
+		        });
+
+		        $('.down').click(function(){
+
+		          newNum = parseInt($('#' + $(this).attr('path') + 'num').text());
+		          obj = $('#' + $(this).attr('path') + 'num');
+		          path = $(this).attr('path');
+
+		          $.post('scripts/addPoint.php', {todo: $(this).attr('path'), userID: $('#getUserID').attr('userID'), point: '-1'}, function(data){
+
+		            dataArr = data.split('\n');
+		            newNum += parseInt(dataArr[0]);
+		            obj.text(newNum);
+		            changeState(path, parseInt(dataArr[0]));
+
+
+		          });
+		        });
 
               $(this).fadeIn();
           });
