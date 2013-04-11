@@ -176,8 +176,6 @@ If a querystring with an attribute 'error' is sent to this page, an error alert 
 <div id="fb-root"></div>
 <div id="inset_form"></div>
 <script src="pageScripts.js"></script>
-
-
-
+<script type="text/javascript">FBLogin();</script>
 </body>
 </html>
