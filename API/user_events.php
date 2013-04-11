@@ -16,7 +16,7 @@
   }
 
   $error = 0;
-  if(isset($rows)) $error = 101;
+  if(!isset($rows)) $error = 101;
   $output = array();
 
   $output['error_code'] = $error; 
