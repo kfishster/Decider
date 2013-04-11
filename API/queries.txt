@@ -72,7 +72,7 @@ Section 2: Queries
 		   }
 }
 
-
+#--Implemented--No location--#
 ### Todos For Event [GET] https://decider.azurewindows.com/api/event_todo.php
 # Required
     eid    : the event id where todos will be taken from

@@ -2,7 +2,7 @@
 
 include('database_connection.php');
 
-function jsonify($query){
+function jsonify($query, $name){
 
   $result = mysql_query($query) or die(mysql_error());
 
@@ -14,7 +14,8 @@ function jsonify($query){
   $output = array();
 
   $output['error_code'] = $error; 
-  $output['result'] = $rows;
+  $output['result'] = array();
+  $output['result'][$name] = $rows;
 
   echo json_encode($output);
 

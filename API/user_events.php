@@ -9,6 +9,6 @@
   					Title as title 
   					FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE FBid = '. $fbid.';';  
 
-  jsonify($query);
+  jsonify($query, 'events');
 
 ?>

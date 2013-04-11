@@ -10,6 +10,6 @@
                     Points as pts
                     FROM Has NATURAL JOIN Todo WHERE EventID = ' . $eid .' ORDER BY Points DESC;';
 
-  jsonify($query);
+  jsonify($query, 'todos');
 
 ?>
