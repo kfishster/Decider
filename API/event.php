@@ -6,9 +6,8 @@
  
 	$query = 'SELECT 	EventID AS eid, 
   						Admin AS admin_fbid, 
-  						Title AS title,
-  						Description AS description 
-  						FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE EventID = '. $eid.';';  
+  						Title AS title
+  						FROM Event WHERE EventID = '. $eid.';';  
 
   jsonify($query, 'event');
 
