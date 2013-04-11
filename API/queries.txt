@@ -46,7 +46,7 @@ Section 2: Queries
 		   }
 }
 
-
+#--Implemented--#
 ### Get Participants For Event [GET] https://decider.azurewindows.com/api/event_users.php
 # Required
     eid    : the event id of the event where users will be taken from
