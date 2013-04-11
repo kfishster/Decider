@@ -85,7 +85,7 @@ Section 2: Queries
 		   }
 }
 
-
+#--Implemented--#
 ### Get Event [GET] https://decider.azurewindows.com/api/event.php
 # Required
     eid    : the id of the event
