@@ -9,9 +9,3 @@ Section 0: Error Codes
     105 - Invalid Permissions
     106 - User already upvoted todo
     107 - User already downvoted todo
-
-
-
-
-
-

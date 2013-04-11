@@ -7,7 +7,7 @@
   $query = 'SELECT 	EventID AS eid, 
   					Admin AS admin_fbid, 
   					Title as title 
-  					FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE FBid = ' . $id.'";';  
+  					FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE FBid = '. $fbid.';';  
 
   $result = mysql_query($query) or die(mysql_error());
 
@@ -15,9 +15,13 @@
       $rows[$i] = $row;
   }
 
-  $output['error_code'] = 0; 
+  $error = 0;
+  if(isset($rows)) $error = 101;
+  $output = array();
+
+  $output['error_code'] = $error; 
   $output['result'] = $rows;
-  
+
   echo json_encode($output);
 
 ?>
