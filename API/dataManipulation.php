@@ -21,4 +21,17 @@ function jsonify($query, $name){
 
 }
 
+function insert($query){
+
+  $result = mysql_query($query) or die(mysql_error());
+
+}
+
+function insert_and_echo($insert, $get, $name){
+
+  insert($insert);
+  jsonify($get, $name);
+
+}
+
 ?>

@@ -15,7 +15,7 @@ Adds the event to the database and returns its eventID
   $userID = $_POST['userID'];
 
   //Inserts event into the database
-  $query = 'INSERT INTO Event VALUES(NULL, '.$userID.', "'.$title.'", NULL)';  
+  $query = 'INSERT INTO Event VALUES(NULL, '.$userID.', "'.$title.'", NULL, NULL)';  
 
 
   $result = mysql_query($query) or die(mysql_error());
