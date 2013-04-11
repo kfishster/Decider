@@ -59,7 +59,7 @@ Section 2: Queries
 		   }
 }
 
-
+#--Implemented--#
 ### Get Events For User [GET] https://decider.azurewindows.com/api/user_events.php
 # Required
     fbid    : the Facebook id of the user events will be taken from
