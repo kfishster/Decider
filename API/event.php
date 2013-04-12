@@ -11,7 +11,7 @@
 	  						Title AS title
 	  						FROM Event WHERE EventID = ?;';  
 
-	  	jsonify($query, [$eid], 'event');
+	  	//jsonify($query, [$eid], 'event');
 
   }
   else if(isset($_POST['adminfbid']))
