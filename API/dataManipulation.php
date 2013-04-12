@@ -4,7 +4,7 @@ include('database_connection.php');
 
 function jsonify($query, $vars, $name){
 
-  echo $query, $vars, $name;
+  //echo $query, $vars, $name;
 /*
   $stmt = $mysqli->prepare($query);
 

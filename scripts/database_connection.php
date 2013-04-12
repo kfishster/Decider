@@ -15,10 +15,11 @@ $dbpass = "5d8622ae";
 $dbname = "deciderAE9zUqb8x";
 
  $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+
   if(mysqli_connect_errno()) {
       echo "Connection Failed: " . mysqli_connect_errno();
       exit();
    }
-
+   echo 'Connected!';
 
 ?>
