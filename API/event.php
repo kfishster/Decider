@@ -9,6 +9,7 @@
                 Title AS title
                 FROM Event WHERE EventID = ?;';  
 
-      jsonify($query, [$eid], 'event');
+                echo 'hi';
+      //jsonify($query, [$eid], 'event');
 
 ?>
