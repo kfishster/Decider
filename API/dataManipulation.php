@@ -17,6 +17,8 @@ function jsonify($query, $vars, $name){
   for($i=0; $i < $vars.len(); $i++)
     $inp += 's';
 
+  echo $inp;
+
   $stmt->bind_param($inp, $filehash);
   $stmt->execute();
 
