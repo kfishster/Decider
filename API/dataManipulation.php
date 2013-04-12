@@ -17,13 +17,15 @@ function jsonify($query, $vars, $name){
   for($i=0; $i < $vars.len(); $i++)
     $inp += 's';
 
-  echo $inp;
-
+  echo $inp, $query;
+  var_dump($vars);
+  
+/*
   $stmt->bind_param($inp, $filehash);
   $stmt->execute();
-
+/*
   /* bind result variables */
-  $stmt->bind_result($result);
+  /*$stmt->bind_result($result);
   $count = 0;
   while ($stmt->fetch()) {
 
@@ -39,7 +41,7 @@ function jsonify($query, $vars, $name){
   $output['result'][$name] = $rows;
 
   echo json_encode($output);
-
+*/
 }
 
 function insert($query){
