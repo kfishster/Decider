@@ -5,7 +5,7 @@ include('database_connection.php');
 function jsonify($query, $vars, $name){
 
   echo $query, $vars, $name;
-
+/*
   $stmt = $mysqli->prepare($query);
 
   $inp = '';
@@ -13,7 +13,7 @@ function jsonify($query, $vars, $name){
     $inp += 's';
 
 
-/*
+
   $stmt->bind_param($inp, $filehash);
   $stmt->execute();
 /*
