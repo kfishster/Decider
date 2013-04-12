@@ -17,12 +17,15 @@ $dbname = "deciderAE9zUqb8x";
  $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(mysqli_connect_errno()) {
       echo "Connection Failed: " . mysqli_connect_errno();
       exit();
    }
    echo 'Connected!';
 
+=======
+>>>>>>> parent of f308cbf... Showing awesomeness
 =======
 >>>>>>> parent of f308cbf... Showing awesomeness
 ?>
