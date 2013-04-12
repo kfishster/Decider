@@ -2,12 +2,31 @@
 
 include('database_connection.php');
 
-function jsonify($query, $name){
+function jsonify($query, $vars, $name){
 
-  $result = mysql_query($query) or die(mysql_error());
+  $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+  if(mysqli_connect_errno()) {
+      echo "Connection Failed: " . mysqli_connect_errno();
+      exit();
+   }
 
-  for($i = 0; $row = @mysql_fetch_assoc($result); $i++) {
-      $rows[$i] = $row;
+
+  $stmt = $mysqli->prepare($query);
+
+  $inp = '';
+  for($i=0; $i < $vars.len(); $i++)
+    $inp += 's';
+
+  $stmt->bind_param($inp, $filehash);
+  $stmt->execute();
+
+  /* bind result variables */
+  $stmt->bind_result($result);
+  $count = 0;
+  while ($stmt->fetch()) {
+
+        $results[$count] = $result;
+        $count++;
   }
 
   if(!isset($rows)) $error = 101;
@@ -32,6 +51,21 @@ function insert_and_echo($insert, $get, $name){
   insert($insert);
   jsonify($get, $name);
 
+}
+
+function prepareExec($template, $vars)
+{
+  $stmt = $mysqli->prepare($template);
+
+  $inp = '';
+  for($i=0; $i < $vars.len(); $i++)
+    $inp += 's';
+
+  $stmt->bind_param($inp, $filehash);
+  $stmt->execute();
+
+  /* bind result variables */
+  $stmt->bind_result($result);
 }
 
 ?>

@@ -9,9 +9,10 @@
 	  	$query = 'SELECT 	EventID AS eid, 
 	  						Admin AS admin_fbid, 
 	  						Title AS title
-	  						FROM Event WHERE EventID = '. $eid.';';  
+	  						FROM Event WHERE EventID = ?;';  
 
-	  	jsonify($query, 'event');
+	  	jsonify($query, [$eid], 'event');
+
   }
   else if(isset($_POST['adminfbid']))
   {
