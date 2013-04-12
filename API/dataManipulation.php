@@ -4,12 +4,7 @@ include('database_connection.php');
 
 function jsonify($query, $vars, $name){
 
-  $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-  if(mysqli_connect_errno()) {
-      echo "Connection Failed: " . mysqli_connect_errno();
-      exit();
-   }
-
+  echo $query, $vars, $name;
 
   $stmt = $mysqli->prepare($query);
 
@@ -17,9 +12,7 @@ function jsonify($query, $vars, $name){
   for($i=0; $i < $vars.len(); $i++)
     $inp += 's';
 
-  echo $inp, $query;
-  var_dump($vars);
-  
+
 /*
   $stmt->bind_param($inp, $filehash);
   $stmt->execute();
