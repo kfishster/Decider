@@ -14,18 +14,9 @@ $dbuser = "b1700f50bf2ed7";
 $dbpass = "5d8622ae";
 $dbname = "deciderAE9zUqb8x";
 
- $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  if(mysqli_connect_errno()) {
-      echo "Connection Failed: " . mysqli_connect_errno();
-      exit();
-   }
-   echo 'Connected!';
+mysql_select_db($dbname) or die(mysql_error());
 
-=======
->>>>>>> parent of f308cbf... Showing awesomeness
-=======
->>>>>>> parent of f308cbf... Showing awesomeness
+
 ?>

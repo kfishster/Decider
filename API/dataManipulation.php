@@ -2,28 +2,12 @@
 
 include('database_connection.php');
 
-function jsonify($query, $vars, $name){
+function jsonify($query, $name){
 
-  //echo $query, $vars, $name;
-/*
-  $stmt = $mysqli->prepare($query);
+  $result = mysql_query($query) or die(mysql_error());
 
-  $inp = '';
-  for($i=0; $i < $vars.len(); $i++)
-    $inp += 's';
-
-
-
-  $stmt->bind_param($inp, $filehash);
-  $stmt->execute();
-/*
-  /* bind result variables */
-  /*$stmt->bind_result($result);
-  $count = 0;
-  while ($stmt->fetch()) {
-
-        $results[$count] = $result;
-        $count++;
+  for($i = 0; $row = @mysql_fetch_assoc($result); $i++) {
+      $rows[$i] = $row;
   }
 
   if(!isset($rows)) $error = 101;
@@ -34,7 +18,7 @@ function jsonify($query, $vars, $name){
   $output['result'][$name] = $rows;
 
   echo json_encode($output);
-*/
+
 }
 
 function insert($query){
@@ -48,21 +32,6 @@ function insert_and_echo($insert, $get, $name){
   insert($insert);
   jsonify($get, $name);
 
-}
-
-function prepareExec($template, $vars)
-{
-  $stmt = $mysqli->prepare($template);
-
-  $inp = '';
-  for($i=0; $i < $vars.len(); $i++)
-    $inp += 's';
-
-  $stmt->bind_param($inp, $filehash);
-  $stmt->execute();
-
-  /* bind result variables */
-  $stmt->bind_result($result);
 }
 
 ?>
