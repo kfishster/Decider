@@ -137,7 +137,7 @@ Section 2: Queries
 		   }
 }
 
-
+#--Implemented (not tested) --#
 ### Create Event [POST] https://decider.azurewindows.com/api/event.php
 # Required
     adminfbid   : the Facebook id of the user creating the event
@@ -152,7 +152,7 @@ Section 2: Queries
 		   }
 }
 
-
+#--Implemented (not tested) --#
 ### Create Todo [POST] https://decider.azurewindows.com/api/todo.php
 # Required
     eid         : the parent event of the todo
@@ -191,7 +191,7 @@ Section 2: Queries
 		   }
 }
 
-
+#--Implemented (not tested) --#
 ### Add Participants For Event [POST] https://decider.azurewindows.com/api/event_participants.php
 # Required
     eid     : the event id of the event where users will be added to
@@ -203,7 +203,7 @@ Section 2: Queries
     "result"     : {}
 }
 
-
+#--Implemented (not tested) --#
 ### Remove Participants For Event [GET] https://decider.azurewindows.com/api/event_participants.php
 # Required
     eid     : the event id of the event where users will be removed from
@@ -215,10 +215,11 @@ Section 2: Queries
     "result"     : {}
 }
 
-
+#--ADDED FBID TO MARK PERSON ADDING POINT---IMPLEMENTED (not tested)--#
 ### Add Points For Todo [POST] https://decider.azurewindows.com/api/todo_points.php
 # Required
     tdid     : the todo id of the todo where points will be added to
+    fbid     : the Facebook ID of the user who added point
 
 # Return
 {
@@ -226,10 +227,11 @@ Section 2: Queries
     "result"     : {}
 }
 
-
+#--ADDED FBID TO MARK PERSON ADDING POINT---IMPLEMENTED (not tested)--#
 ### Remove Points For Todo [GET] https://decider.azurewindows.com/api/todo_points.php
 # Required
     tdid     : the todo id of the event where points will be removed from
+    fbid     : the Facebook ID of the user who removed point
 
 # Return
 {

@@ -2,13 +2,21 @@
 
 include('database_connection.php');
 
-function jsonify($query, $name){
+function jsonify($stmt, $name){
 
-  $result = mysql_query($query) or die(mysql_error());
+  $stmt->execute();
 
-  for($i = 0; $row = @mysql_fetch_assoc($result); $i++) {
-      $rows[$i] = $row;
-  }
+
+  /* bind result variables */
+  $result = $stmt->get_result();
+  $count = 0;
+  $rows = null;
+  while ($row = $result->fetch_assoc()) {
+        $rows[$count] = $row;
+        $count++;
+    }
+
+  $error = null;
 
   if(!isset($rows)) $error = 101;
   $output = array();
@@ -21,16 +29,116 @@ function jsonify($query, $name){
 
 }
 
-function insert($query){
+function insert($stmt, $query, $name){
 
-  $result = mysql_query($query) or die(mysql_error());
+  global $mysqli;
+
+  $stmt->execute();
+  $eid = $mysqli->insert_id;
+
+  $stmt = $mysqli->prepare($query);
+  $stmt->bind_param('s', $eid);
+  
+  $stmt->execute();
+
+
+  /* bind result variables */
+  $result = $stmt->get_result();
+  $count = 0;
+  $rows = null;
+  while ($row = $result->fetch_assoc()) {
+        $rows[$count] = $row;
+        $count++;
+    }
+
+  $error = null;
+
+  if(!isset($rows)) $error = 101;
+  $output = array();
+
+  $output['error_code'] = $error; 
+  $output['result'] = array();
+  $output['result'][$name] = $rows;
+
+  echo json_encode($output);
 
 }
 
-function insert_and_echo($insert, $get, $name){
+function runWithoutOutput($stmt){
 
-  insert($insert);
-  jsonify($get, $name);
+  global $mysqli;
+
+  $stmt->execute();
+  $output = array();
+
+  $output['error_code'] = $error; 
+  $output['result'] = array();
+
+  echo json_encode($output);
+
+}
+
+function insertTodo($stmt, $getquery, $hasquery, $name, $fbid){
+
+  global $mysqli;
+
+  $stmt->execute();
+  $eid = $mysqli->insert_id;
+
+
+  $stmt = $mysqli->prepare($getquery);
+  $stmt->bind_param('s', $eid);
+  
+  $stmt->execute();
+
+  $result = $stmt->get_result();
+
+  $stmt = $mysqli->prepare($hasquery);
+  $stmt->bind_param('ss', $eid, $fbid);
+  
+  $stmt->execute();
+
+
+  /* bind result variables */
+  $result = $stmt->get_result();
+  $count = 0;
+  $rows = null;
+  while ($row = $result->fetch_assoc()) {
+        $rows[$count] = $row;
+        $count++;
+    }
+
+  $error = null;
+
+  if(!isset($rows)) $error = 101;
+  $output = array();
+
+  $output['error_code'] = $error; 
+  $output['result'] = array();
+  $output['result'][$name] = $rows;
+
+  echo json_encode($output);
+
+}
+
+function exists($stmt){
+
+  $stmt->execute();
+
+
+  /* bind result variables */
+  $result = $stmt->get_result();
+  $count = 0;
+  $rows = null;
+  while ($row = $result->fetch_assoc()) {
+        $rows[$count] = $row;
+        $count++;
+    }
+
+  $error = null;
+
+  if(!isset($rows)) return false;
+  else return true;
 
 }
 

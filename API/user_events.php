@@ -1,14 +1,20 @@
 <?php
 
-  include('dataManipulation.php');
+  	include('dataManipulation.php');
 
-  $fbid = $_GET['fbid'];
+  	$fbid = $_GET['fbid'];
 
-  $query = 'SELECT 	EventID AS eid, 
+  	$query = 'SELECT 	EventID AS eid, 
   					Admin AS admin_fbid, 
   					Title as title 
-  					FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE FBid = '. $fbid.';';  
+  					FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE FBid = ?;';  
 
-  jsonify($query, 'events');
+
+   	global $mysqli;
+  
+ 	$stmt = $mysqli->prepare($query);
+ 	$stmt->bind_param('s', $fbid);
+
+    jsonify($stmt, 'events');
 
 ?>

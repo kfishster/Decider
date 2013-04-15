@@ -1,28 +1,45 @@
 <?php
+	
+	include('dataManipulation.php');
 
-  include('dataManipulation.php');
-
-  if(isset($_GET['eid']))
-  {
+	if(isset($_GET['eid']))
+	{
 	  	$eid = $_GET['eid'];
-	 
-	  	$query = 'SELECT 	EventID AS eid, 
-	  						Admin AS admin_fbid, 
-	  						Title AS title
-	  						FROM Event WHERE EventID = '. $eid.';';  
+	   
+	 	$query = 'SELECT  EventID AS eid, 
+	                Admin AS admin_fbid, 
+	                Title AS title
+	                FROM Event WHERE EventID = ?;';  
 
-	  	jsonify($query, 'event');
-  }
-  else if(isset($_POST['adminfbid']))
-  {
 
-   	$adminfbid = $_POST['adminfbid'];
-   	$title = $_POST['title'];
-   	$description = $_POST['description']; 
-  
-  	$insert = 'INSERT INTO Event VALUES(NULL, '.$userID.', "'.$title.'", NULL, '.$description.')';
+		global $mysqli;
+	  
+	 	$stmt = $mysqli->prepare($query);
+	 	$stmt->bind_param('s', $eid);
 
-  	insert($insert);
-  }
+	    jsonify($stmt, 'event');
+	}
+	else if(isset($_POST['admin_fbid']))
+	{
+		$admin_fbid = $_POST['admin_fbid'];
+		$title = $_POST['title'];
+		$description = $_POST['description'];
+
+		$query = 'INSERT INTO Event VALUES(NULL, ?, ?, NULL, ?)';
+
+		global $mysqli;
+	  
+	 	$stmt = $mysqli->prepare($query);
+	 	$stmt->bind_param('sss', $admin_fbid, $title, $description);
+
+
+	 	$query = 'SELECT  EventID AS eid, 
+	                Admin AS admin_fbid, 
+	                Title AS title
+	                FROM Event WHERE EventID = ?;';
+
+	    insert($stmt, $query, 'event');
+
+	}
 
 ?>
