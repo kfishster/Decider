@@ -21,19 +21,7 @@ $query = 'SELECT * FROM Has NATURAL JOIN Todo WHERE EventID = ' . $id .' ORDER B
 $eventQuery = 'SELECT * FROM Event INNER JOIN User ON Admin = FBid WHERE EventID = ' . $id;
 
 
-$url = 'API/event_todo.php';
-$data = array('eid' => $id);
-
-// use key 'http' even if you send the request to https://...
-$options = array(
-    'http' => array(
-        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-        'method'  => 'GET',
-        'content' => http_build_query($data),
-    ),
-);
-$context  = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
+$result = http_get("API/event_todo.php?eid=".$id);
 
 var_dump($result);
 
