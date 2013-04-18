@@ -41,7 +41,7 @@
 	                Title AS title
 	                FROM Event WHERE EventID = ?;';
 
-	    insert($stmt, $query, $hasquery, 'event', $admin_fbid);
+	    insertTodo($stmt, $query, $hasquery, 'event', $admin_fbid);
 
 	}
 ?>

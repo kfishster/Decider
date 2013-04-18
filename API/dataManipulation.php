@@ -121,6 +121,49 @@ function insertTodo($stmt, $getquery, $hasquery, $name, $fbid){
 
 }
 
+function insertEvent($stmt, $getquery, $parquery, $name, $fbid){
+
+  global $mysqli;
+
+  $stmt->execute();
+  $eid = $mysqli->insert_id;
+
+
+  $stmt = $mysqli->prepare($getquery);
+  $stmt->bind_param('s', $eid);
+  
+  $stmt->execute();
+
+  $result = $stmt->get_result();
+
+  $stmt = $mysqli->prepare($hasquery);
+  $stmt->bind_param('ss', $fbid, $eid);
+  
+  $stmt->execute();
+
+
+  /* bind result variables */
+  $result = $stmt->get_result();
+  $count = 0;
+  $rows = null;
+  while ($row = $result->fetch_assoc()) {
+        $rows[$count] = $row;
+        $count++;
+    }
+
+  $error = null;
+
+  if(!isset($rows)) $error = 101;
+  $output = array();
+
+  $output['error_code'] = $error; 
+  $output['result'] = array();
+  $output['result'][$name] = $rows;
+
+  echo json_encode($output);
+
+}
+
 function exists($stmt){
 
   $stmt->execute();

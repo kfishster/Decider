@@ -26,6 +26,7 @@
 		$description = $_POST['description'];
 
 		$query = 'INSERT INTO Event VALUES(NULL, ?, ?, NULL, ?)';
+		$parQuery = 'INSERT INTO Participates VALUES(?, ?)';
 
 		global $mysqli;
 	  
@@ -38,7 +39,7 @@
 	                Title AS title
 	                FROM Event WHERE EventID = ?;';
 
-	    insert($stmt, $query, 'event');
+	    insertEvent($stmt, $query, $parQuery, 'event', $admin_fbid);
 
 	}
 
