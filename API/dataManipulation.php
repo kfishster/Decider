@@ -100,7 +100,7 @@ function insertTodo($stmt, $getquery, $hasquery, $name, $fbid){
 
 
   /* bind result variables */
-  $result = $stmt->get_result();
+  
   $count = 0;
   $rows = null;
   while ($row = $result->fetch_assoc()) {
@@ -136,14 +136,14 @@ function insertEvent($stmt, $getquery, $parquery, $name, $fbid){
 
   $result = $stmt->get_result();
 
-  $stmt = $mysqli->prepare($hasquery);
+  $stmt = $mysqli->prepare($parquery);
   $stmt->bind_param('ss', $fbid, $eid);
   
   $stmt->execute();
 
 
   /* bind result variables */
-  $result = $stmt->get_result();
+
   $count = 0;
   $rows = null;
   while ($row = $result->fetch_assoc()) {
