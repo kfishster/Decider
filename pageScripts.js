@@ -170,15 +170,7 @@ $('.openEvent').click(function(){
   
         });
 
-        $('.loadComments').click(function(){
-
-          alert('clicked');
-
-          var href = $(this).attr('href');
-          var tdid = $(this).attr('tdid');
-          $('cd' + href).load('scripts/commentPage.php?tdid=' + tdid);
-
-        });
+        
 
     });
 

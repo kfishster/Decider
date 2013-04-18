@@ -68,7 +68,7 @@ foreach($rows as $todo)
 	$hash = hash('md4', $todo['Title'] + strval(rand()));
 	echo '<div class="accordion-group"> <div class="accordion-heading">';
 	echo '<div class="row-fluid"><div class="span10">';
-	echo '<h4><a class="accordion-toggle, loadComment" data-toggle="collapse" data-parent="#accordion2" href="#'.$hash.'" tdid="'.$todo['TodoID'].'">'.$todo['Title'].'</a></h4>';
+	echo '<h4><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$hash.'" tdid="'.$todo['TodoID'].'">'.$todo['Title'].'</a></h4>';
 	echo '</div><div class="span2"><h3><a class="up" state="'.$plusState.'" path="'.$todo['TodoID'].'" href="#" style="background-color: '.$plus.';">+</a>&nbsp;&nbsp;<span id="'.$todo['TodoID'].'num">'.$todo['Points'].'</span>&nbsp;&nbsp;<a class="down" state="'.$minState.'" path="'.$todo['TodoID'].'" href="#" style="background-color: '.$minus.';">--</a></h3></div></div>';
 	echo '</div>';
 	
