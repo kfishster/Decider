@@ -74,7 +74,8 @@ foreach($rows as $todo)
 	
 	echo '<div id="'.$hash.'" class="accordion-body collapse"><div class="accordion-inner">';
 	echo '<p>'.$todo['Description'].'</p>';
-	echo file_get_contents('/scripts/commentPage?tdid='.$todo['TodoID']);
+	$comm =  file_get_contents('/scripts/commentPage?tdid='.$todo['TodoID']);
+	echo $comm;
 	echo '</div></div></div><br>';
 
 }
