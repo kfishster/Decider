@@ -16,6 +16,6 @@
  	$stmt = $mysqli->prepare($query);
  	$stmt->bind_param('s', $eid);
 
-    jsonify($stmt, 'todo');
+    jsonify($stmt, 'todos');
 
 ?>

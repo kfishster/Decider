@@ -21,11 +21,6 @@ $query = 'SELECT * FROM Has NATURAL JOIN Todo WHERE EventID = ' . $id .' ORDER B
 $eventQuery = 'SELECT * FROM Event INNER JOIN User ON Admin = FBid WHERE EventID = ' . $id;
 
 
-$result = http_get("API/event_todo.php?eid=".$id);
-
-var_dump($result);
-
-
       
 $result = mysql_query($query) or die(mysql_error());
 
