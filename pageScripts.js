@@ -70,7 +70,7 @@ $('#newEvent').click(function(){
   
 });
 
-$('#accordion-toggle').click(function(){
+$('.accordion-toggle').click(function(){
 
   var href = $(this).attr('href');
   var tdid = $(this).attr('tdid');
