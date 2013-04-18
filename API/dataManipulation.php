@@ -78,23 +78,23 @@ function runWithoutOutput($stmt){
 
 }
 
-function insertTodo($stmt, $getquery, $hasquery, $name, $fbid){
+function insertTodo($stmt, $getquery, $hasquery, $name, $eid){
 
   global $mysqli;
 
   $stmt->execute();
-  $eid = $mysqli->insert_id;
+  $tdid = $mysqli->insert_id;
 
 
   $stmt = $mysqli->prepare($getquery);
-  $stmt->bind_param('s', $eid);
+  $stmt->bind_param('s', $tdid);
   
   $stmt->execute();
 
   $result = $stmt->get_result();
 
   $stmt = $mysqli->prepare($hasquery);
-  $stmt->bind_param('ss', $eid, $fbid);
+  $stmt->bind_param('ss', $eid, $tdid);
   
   $stmt->execute();
 

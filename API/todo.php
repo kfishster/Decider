@@ -21,27 +21,29 @@
 	    jsonify($stmt, 'todo');
 
 	}
-	else if(isset($_POST['admin_fbid']))
+	else if(isset($_POST['eid']))
 	{
-		$admin_fbid = $_POST['admin_fbid'];
+		$eid = $_POST['eid'];
 		$title = $_POST['title'];
 		$description = $_POST['description'];
 
-		$getquery = 'INSERT INTO Todo VALUES(NULL, 0, ?, ?)';
+		$query = 'INSERT INTO Todo VALUES(NULL, 0, ?, ?)';
 		$hasquery = 'INSERT INTO Has VALUES(?, ?)';
 		
 		global $mysqli;
 	  
 	 	$stmt = $mysqli->prepare($query);
-	 	$stmt->bind_param('sss', $admin_fbid, $title, $description);
+	 	$stmt->bind_param('ss', $description, $title);
 
 
-	 	$query = 'SELECT  EventID AS eid, 
-	                Admin AS admin_fbid, 
-	                Title AS title
-	                FROM Event WHERE EventID = ?;';
+	 	$getquery = 'SELECT  EventID as eid, 
+	                    ToDoID as tdid,
+	                    Description as description,
+	                    Title as title,
+	                    Points as pts
+	                    FROM Todo NATURAL JOIN Has WHERE ToDoID = ?';
 
-	    insertTodo($stmt, $query, $hasquery, 'event', $admin_fbid);
+	    insertTodo($stmt, $getquery, $hasquery, 'todo', $eid);
 
 	}
 ?>
