@@ -70,6 +70,14 @@ $('#newEvent').click(function(){
   
 });
 
+$('#accordion-toggle').click(function(){
+
+  var href = $(this).attr('href');
+  var tdid = $(this).attr('tdid');
+  $('cd' + href).load('scripts/commentPage.php?tdid=' + tdid);
+
+});
+
 function changeState(todo, num){
 
 
