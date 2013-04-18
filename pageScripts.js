@@ -170,7 +170,7 @@ $('.openEvent').click(function(){
   
         });
 
-        $('.accordion-toggle').click(function(){
+        $('.loadComments').click(function(){
 
           alert('clicked');
 
