@@ -19,9 +19,9 @@
 
 	    jsonify($stmt, 'event');
 	}
-	else if(isset($_POST['admin_fbid']))
+	else if(isset($_POST['adminfbid']))
 	{
-		$admin_fbid = $_POST['admin_fbid'];
+		$admin_fbid = $_POST['adminfbid'];
 		$title = $_POST['title'];
 		$description = $_POST['description'];
 
