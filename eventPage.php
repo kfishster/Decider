@@ -74,7 +74,7 @@ foreach($rows as $todo)
 	
 	echo '<div id="'.$hash.'" class="accordion-body collapse"><div class="accordion-inner">';
 	echo '<p>'.$todo['Description'].'</p>';
-	echo '<div id="cd'.$hash.'"></div>'
+	echo '<div id="cd'.$hash.'"></div>';
 	echo '</div></div></div><br>';
 
 }
