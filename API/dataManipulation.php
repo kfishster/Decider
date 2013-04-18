@@ -70,7 +70,7 @@ function runWithoutOutput($stmt){
 
   $stmt->execute();
   $output = array();
-
+  $error = null;
   $output['error_code'] = $error; 
   $output['result'] = array();
 

@@ -31,7 +31,7 @@
 	    runWithoutOutput($stmt);
 
 	}
-	if(isset($_GET['tdid']))
+	else if(isset($_GET['tdid']))
 	{
 	  	$tdid = $_GET['tdid'];
 	  	$fbid = $_GET['fbid'];
@@ -41,7 +41,7 @@
 	 	$stmt->bind_param('ss', $tdid, $fbid);
 
 	 	if(exists($stmt))
-	 		$query = 'UPDATE Points SET Point= Point + 1 WHERE ToDoID= ? AND FBid = ?;';
+	 		$query = 'UPDATE Points SET Point= Point - 1 WHERE ToDoID= ? AND FBid = ?;';
 	 	else
 	 	 	$query = 'INSERT INTO Points VALUES(?, ?, -1);';
 	  	
