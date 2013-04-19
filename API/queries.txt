@@ -1,7 +1,7 @@
 
 Section 2: Queries
 ----------------------------------------------------------------------------------------
-### User Authentication [GET] https://decider.azurewebsites.net/api/login.php
+### User Authentication [GET] http://decider.azurewebsites.net/api/login.php
 # Required
     basic HTTP authentication - "basic email:password"
 # Optional
@@ -14,7 +14,7 @@ Section 2: Queries
 }
 
 
-### User Registration [POST] https://decider.azurewebsites.net/api/register.php
+### User Registration [POST] http://decider.azurewebsites.net/api/register.php
 # Required
     email    : the user email that is to be registered
     password : the user password that is set to be put into the database
@@ -34,7 +34,7 @@ Section 2: Queries
 --------------------------------------------------------------------------------------------------
 
 
-### Get Locations For User [GET] https://decider.azurewebsites.net/api/user_locations.php
+### Get Locations For User [GET] http://decider.azurewebsites.net/api/user_locations.php
 # Required
     fbid    : the Facebook id of the user events will be taken from
 
@@ -47,7 +47,7 @@ Section 2: Queries
 }
 
 #--Implemented--#
-### Get Participants For Event [GET] https://decider.azurewebsites.net/api/event_users.php
+### Get Participants For Event [GET] http://decider.azurewebsites.net/api/event_users.php
 # Required
     eid    : the event id of the event where users will be taken from
 
@@ -60,7 +60,7 @@ Section 2: Queries
 }
 
 #--Implemented--#
-### Get Events For User [GET] https://decider.azurewebsites.net/api/user_events.php
+### Get Events For User [GET] http://decider.azurewebsites.net/api/user_events.php
 # Required
     fbid    : the Facebook id of the user events will be taken from
 
@@ -73,7 +73,7 @@ Section 2: Queries
 }
 
 #--Implemented--No location--#
-### Todos For Event [GET] https://decider.azurewebsites.net/api/event_todo.php
+### Todos For Event [GET] http://decider.azurewebsites.net/api/event_todo.php
 # Required
     eid    : the event id where todos will be taken from
 
@@ -86,7 +86,7 @@ Section 2: Queries
 }
 
 #--Implemented--#
-### Get Event [GET] https://decider.azurewebsites.net/api/event.php
+### Get Event [GET] http://decider.azurewebsites.net/api/event.php
 # Required
     eid    : the id of the event
 
@@ -99,7 +99,7 @@ Section 2: Queries
 }
 
 #--Implemented--No location--#
-### Get Todo [GET] https://decider.azurewebsites.net/api/todo.php
+### Get Todo [GET] http://decider.azurewebsites.net/api/todo.php
 # Required
     tdid    : the id of the todo
 
@@ -112,7 +112,7 @@ Section 2: Queries
 }
 
 
-### Get Location [GET] https://decider.azurewebsites.net/api/location.php
+### Get Location [GET] http://decider.azurewebsites.net/api/location.php
 # Required
     lid    : the id of the location
 
@@ -125,7 +125,7 @@ Section 2: Queries
 }
 
 #--Implemented--#
-### Get User [GET] https://decider.azurewebsites.net/api/user.php
+### Get User [GET] http://decider.azurewebsites.net/api/user.php
 # Required
     fid    : the Facebook id of the user
 
@@ -138,7 +138,7 @@ Section 2: Queries
 }
 
 #--Implemented (not tested) --#
-### Create Event [POST] https://decider.azurewebsites.net/api/event.php
+### Create Event [POST] http://decider.azurewebsites.net/api/event.php
 # Required
     adminfbid   : the Facebook id of the user creating the event
     title       : the title of the event
@@ -153,7 +153,7 @@ Section 2: Queries
 }
 
 #--Implemented (not tested) --#
-### Create Todo [POST] https://decider.azurewebsites.net/api/todo.php
+### Create Todo [POST] http://decider.azurewebsites.net/api/todo.php
 # Required
     eid         : the parent event of the todo
     title       : the title of the todo
@@ -171,7 +171,7 @@ Section 2: Queries
 }
 
 
-### Create Location [POST] https://decider.azurewebsites.net/api/location.php
+### Create Location [POST] http://decider.azurewebsites.net/api/location.php
 # Required
     title         : the title of the location
     street        : the street of the location
@@ -192,7 +192,7 @@ Section 2: Queries
 }
 
 #--Implemented (not tested) --#
-### Add Participants For Event [POST] https://decider.azurewebsites.net/api/event_participants.php
+### Add Participants For Event [POST] http://decider.azurewebsites.net/api/event_participants.php
 # Required
     eid     : the event id of the event where users will be added to
     fbid    : the Facebook id of the user to add to the event
@@ -204,7 +204,7 @@ Section 2: Queries
 }
 
 #--Implemented (not tested) --#
-### Remove Participants For Event [GET] https://decider.azurewebsites.net/api/event_participants.php
+### Remove Participants For Event [GET] http://decider.azurewebsites.net/api/event_participants.php
 # Required
     eid     : the event id of the event where users will be removed from
     fbid    : the Facebook id of the user to remove from the event
@@ -216,7 +216,7 @@ Section 2: Queries
 }
 
 #--ADDED FBID TO MARK PERSON ADDING POINT---IMPLEMENTED (not tested)--#
-### Add Points For Todo [POST] https://decider.azurewebsites.net/api/todo_points.php
+### Add Points For Todo [POST] http://decider.azurewebsites.net/api/todo_points.php
 # Required
     tdid     : the todo id of the todo where points will be added to
     fbid     : the Facebook ID of the user who added point
@@ -228,7 +228,7 @@ Section 2: Queries
 }
 
 #--ADDED FBID TO MARK PERSON ADDING POINT---IMPLEMENTED (not tested)--#
-### Remove Points For Todo [GET] https://decider.azurewebsites.net/api/todo_points.php
+### Remove Points For Todo [GET] http://decider.azurewebsites.net/api/todo_points.php
 # Required
     tdid     : the todo id of the event where points will be removed from
     fbid     : the Facebook ID of the user who removed point
@@ -240,7 +240,7 @@ Section 2: Queries
 }
 
 
-### Add Emails To Event [POST] https://decider.azurewebsites.net/api/event_add.php
+### Add Emails To Event [POST] http://decider.azurewebsites.net/api/event_add.php
 # Required
     eid       : the event id that the email will be added to
     email     : the email of the user that is to be added to the event
