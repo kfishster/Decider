@@ -322,9 +322,13 @@ and upon completetion, reload the event page.
             loc = $('#location').val();
 
             alert(loc);
-            return;
+            
+            $('#location').blur();
 
-            if ($('#todoSubmitConf').attr('loc') === '0') {
+            alert($('#todoSubmitConf').attr('loc'));
+            return;
+            
+            if ($('#todoSubmitConf').attr('loc') == '0') {
 
                 $.getJSON('http://maps.googleapis.com/maps/api/geocode/json', {
                     address: loc,
