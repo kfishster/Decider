@@ -200,10 +200,14 @@ and asynchronously loads the event page on the right side.
             <div class="controls controls-row">
              <textarea rows="3" required placeholder="Description" id="descr" class="span5"></textarea>
            </div>
+           <h3>Place</h3>
+           <div class="controls">
+              <input type="text" id="nameOfLocation" placeholder="Name of Place" class="span5">
+            </div>
            <div class="controls">
               <input type="text" id="location" placeholder="Location eg. 1234 Fake St, Urbana, IL" class="span5">
             </div>
-
+            <div class="alert alert-success" style="display:none;" id="confirmation">Thats the address that we found. If that is right, click submit!</div>
            <button id="todoSubmitConf" type="submit" class="btn" loc="0">Submit</button>
           
 

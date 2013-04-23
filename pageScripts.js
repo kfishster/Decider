@@ -323,25 +323,27 @@ and upon completetion, reload the event page.
 
             
             $('#location').blur();
-
-            alert($('#todoSubmitConf').attr('loc'));
             
 
             if ($('#todoSubmitConf').attr('loc') == '0') {
 
-                alert('yay!');
                 $.getJSON('http://maps.googleapis.com/maps/api/geocode/json', {
                     address: loc,
                     sensor: 'false'
                 }, function (data) {
 
-
-                    alert(data.results[0].formatted_address);
-                    $(this).attr('loc', '1');
+                    $('#location').val(alert(data.results[0].formatted_address));
+                    $('#location').attr('stAddr', data.results[0].address_components[0].long_name + data.results[0].address_components[1].short_name);
+                    $('#location').attr('city', data.results[0].address_components[2].long_name);
+                    $('#location').attr('state', data.results[0].address_components[5].short_name);
+                    $('#location').attr('lat', data.results[0].geometry.location.lat);
+                    $('#location').attr('lon', data.results[0].geometry.location.lng);
+                    $('#todoSubmitConf').attr('loc', '1');
+                    $('#confirmation').slideDown();
                 });
 
 
-            } /*else {
+            } else {
                 $.post('./scripts/addTodo.php', {
                     title: title,
                     descr: descr,
@@ -352,6 +354,7 @@ and upon completetion, reload the event page.
                     $('#createTodoModal').modal('hide');
                     $('#titletodo').val('').blur();
                     $('#descr').val('').blur();
+                    $('#confirmation').slideUp();
 
 
 
@@ -420,7 +423,7 @@ and upon completetion, reload the event page.
                     });
 
                 });
-            }*/
+            }
         });
 
 });
