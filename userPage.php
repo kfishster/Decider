@@ -200,8 +200,11 @@ and asynchronously loads the event page on the right side.
             <div class="controls controls-row">
              <textarea rows="3" placeholder="Description" id="descr" class="span5"></textarea>
            </div>
+           <div class="controls">
+              <input type="text" id="location" placeholder="Location eg. 1234 Fake St, Urbana, IL" class="span5">
+            </div>
 
-           <button type="submit" class="btn">Submit</button>
+           <button id="todoSubmitConf" type="submit" class="btn" loc="0">Submit</button>
           
 
          </form>
