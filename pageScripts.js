@@ -321,15 +321,15 @@ and upon completetion, reload the event page.
             evID = $(this).attr('eventID');
             loc = $('#location').val();
 
-            alert(loc);
             
             $('#location').blur();
 
             alert($('#todoSubmitConf').attr('loc'));
-            return;
             
+
             if ($('#todoSubmitConf').attr('loc') == '0') {
 
+                alert('yay!');
                 $.getJSON('http://maps.googleapis.com/maps/api/geocode/json', {
                     address: loc,
                     sensor: 'false'
@@ -341,7 +341,7 @@ and upon completetion, reload the event page.
                 });
 
 
-            } else {
+            } /*else {
                 $.post('./scripts/addTodo.php', {
                     title: title,
                     descr: descr,
@@ -420,7 +420,7 @@ and upon completetion, reload the event page.
                     });
 
                 });
-            }
+            }*/
         });
 
 });
