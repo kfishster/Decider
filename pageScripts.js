@@ -293,7 +293,8 @@ $('#submitTodo').submit(function(event){
     evID = $(this).attr('eventID');
     loc = $('#location').val();
     
-    
+    alert(loc);
+    return;
 
     if($('#todoSubmitConf').attr('loc') === '0')
     {
