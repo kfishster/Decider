@@ -324,8 +324,8 @@ and upon completetion, reload the event page.
             
             $('#location').blur();
             
-alert($('#location').val());
-            if ($('#todoSubmitConf').attr('loc') == '0') {
+
+            if ($('#todoSubmitConf').attr('loc') == '0' && $('#location').val() != '') {
 
                 $.getJSON('http://maps.googleapis.com/maps/api/geocode/json', {
                     address: loc,
@@ -347,7 +347,13 @@ alert($('#location').val());
                 $.post('./scripts/addTodo.php', {
                     title: title,
                     descr: descr,
-                    id: evID
+                    id: evID, 
+                    locTitle: $('#nameOfLocation').val(),
+                    streetAddr: $('#location').attr('stAddr'),
+                    city: $('#location').attr('city'),
+                    state: $('#location').attr('state'),
+                    lat: $('#location').attr('lat'),
+                    lon: $('#location').attr('lon')
                 }, function () {
 
 
