@@ -195,10 +195,10 @@ and asynchronously loads the event page on the right side.
           <form id="submitTodo" eventID="" class="form" method="post">
 
             <div class="controls">
-              <input type="text" id="titletodo" placeholder="Title" class="span5">
+              <input type="text" required id="titletodo" placeholder="Title" class="span5">
             </div>
             <div class="controls controls-row">
-             <textarea rows="3" placeholder="Description" id="descr" class="span5"></textarea>
+             <textarea rows="3" required placeholder="Description" id="descr" class="span5"></textarea>
            </div>
            <div class="controls">
               <input type="text" id="location" placeholder="Location eg. 1234 Fake St, Urbana, IL" class="span5">
