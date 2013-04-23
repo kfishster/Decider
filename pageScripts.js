@@ -274,6 +274,12 @@ $('#submitEvent').submit(function(event){
 
   });
 
+$('#todoSubmitConf').focusin(function(){
+
+  $(this).attr('loc', '0');
+
+});
+
 /*
 When todo has been created, send addTodo all the necessary information via POST
 and upon completetion, reload the event page.
@@ -285,10 +291,24 @@ $('#submitTodo').submit(function(event){
     title = $('#titletodo').val(),
     descr = $('#descr').val();
     evID = $(this).attr('eventID');
+    loc = $('#location').val();
     
     
 
+    if($('#todoSubmitConf').attr('loc') === '0')
+    {
 
+       $.getJSON('http://maps.googleapis.com/maps/api/geocode/json', {address: loc, sensor: 'false'}, function(data){
+
+
+            alert(data.results[0].formatted_address);
+            $(this).attr('loc', '1');
+        });
+      
+
+    }
+    else
+    {
     $.post('./scripts/addTodo.php', {title: title, descr: descr, id:evID} , function (){
 
       
@@ -352,7 +372,7 @@ $('#submitTodo').submit(function(event){
         });
 
       });
-
+      }
     });
 
   
