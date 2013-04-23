@@ -42,7 +42,7 @@ Adds a todo attached to an event to the database
 
     $curLoc = mysql_insert_id();
 
-    $query = 'INSERT INTO islocated VALUES('.$curTodo.', '.$cutLoc.')';
+    $query = 'INSERT INTO islocated VALUES('.$curTodo.', '.$curLoc.')';
     
     $result = mysql_query($query) or die(mysql_error());  
   }
