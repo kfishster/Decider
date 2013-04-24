@@ -4,11 +4,12 @@
 
   	$fbid = $_GET['fbid'];
 
-  	$query = 'SELECT 	EventID AS eid, 
-  					Admin AS admin_fbid, 
-  					Title as title,
-  					Name as admin_name 
-  					FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE FBid = ?;';  
+  	$query = 'SELECT 	EventID as eid, 
+  						Title as title, 
+  						Event.Admin as admin_id, 
+  						Name as admin_name
+  						FROM Event NATURAL JOIN Participates INNER JOIN User ON Event.Admin = User.FBid 
+  						WHERE Participates.FBid = ?;';  
 
 
    	global $mysqli;
