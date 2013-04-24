@@ -13,6 +13,7 @@ Section 1: Models
     "eid"   : unique event id
     "admin_fbid" : administrative user fbid for this event
     "title"      : the title of the event
+    "admin_name" : administrative name for this event
 }
 
 ### Event Model

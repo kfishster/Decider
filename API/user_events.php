@@ -6,7 +6,8 @@
 
   	$query = 'SELECT 	EventID AS eid, 
   					Admin AS admin_fbid, 
-  					Title as title 
+  					Title as title,
+  					Name as admin_name 
   					FROM Event NATURAL JOIN User NATURAL JOIN Participates WHERE FBid = ?;';  
 
 

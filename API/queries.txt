@@ -33,7 +33,7 @@ Section 2: Queries
 ########### ALL QUERIES BELOW LINE REQUIRE VALID COOKIE - OTHERWISE ERROR 104 RETURNED ###########
 --------------------------------------------------------------------------------------------------
 
-
+#--IMPLEMENTED--#
 ### Get Locations For User [GET] http://decider.azurewebsites.net/api/user_locations.php
 # Required
     fbid    : the Facebook id of the user events will be taken from
