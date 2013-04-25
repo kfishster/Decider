@@ -6,53 +6,58 @@
 	{
 
 	  	$tdid = $_GET['tdid'];
- 
-	  	$checkLoc = 'SELECT * FROM isLocated WHERE TodoID = ?';
-	  	$stmt = $mysqli->prepare($checkLoc);
-	 	$stmt->bind_param('s', $tdid);
 
-	 	$stmt->execute();
-
-	 	$result = $stmt->get_result();
-
-	 	$row = $result->fetch_assoc();
-	 	
-	 	if(isset($row))
-	 	{
-	 		$query = 'SELECT  EventID as eid, 
-	                    ToDoID as tdid,
-	                    Description as description,
-	                    Todo.Title as title,
-	                    Points as pts,
-						Latitude as lat,
-						Longitude as lon,
-						Street_Address as address,
-						City as city,
-						State as state,
-						Location.Title as location_title
-	                    FROM Todo NATURAL JOIN Has 
-						NATURAL JOIN isLocated 
-						INNER JOIN Location ON 
-						Todo.TodoID = isLocated.TodoID AND Location.LocationID = isLocated.LocationID 
-						WHERE ToDoID = ?';
-	 	}
-	 	else
-	 	{
-	 		$query = 'SELECT  EventID as eid, 
+	  	$query = 'SELECT  EventID as eid, 
 	                    ToDoID as tdid,
 	                    Description as description,
 	                    Title as title,
 	                    Points as pts
 	                    FROM Todo NATURAL JOIN Has WHERE ToDoID = ?';
+	 
+	 	
+		$locationquery = 'SELECT Latitude as lat,
+						Longitude as lon,
+						Street_Address as address,
+						City as city,
+						State as state,
+						Title as location_title
+						FROM isLocated Natural JOIN Location WHERE TodoID = ?';
 
-	 	}
+		global $mysqli;
 
-	 	global $mysqli;
-		  
 	 	$stmt = $mysqli->prepare($query);
 	 	$stmt->bind_param('s', $tdid);
 
-	    jsonify($stmt, 'todo');
+	    $stmt->execute();
+
+
+		  /* bind result variables */
+		  $result = $stmt->get_result();
+		  
+		  $row = $result->fetch_assoc();
+		  $error = '100';
+		  if(!isset($row)) $error = '101';
+		  $output = array();
+
+		  $output['error_code'] = $error; 
+		  $output['result'] = array();
+		  $output['result']['todo'] = $row;
+
+
+		  $stmt = $mysqli->prepare($locationQuery);
+	 		$stmt->bind_param('s', $tdid);
+
+	    	$stmt->execute();
+
+
+		  /* bind result variables */
+		  $result = $stmt->get_result();
+		  
+		  $row = $result->fetch_assoc();
+		  if(isset($row))
+		  	 $output['result']['location'] = $row;
+
+		  echo json_encode($output);
 	  
 
 
