@@ -108,6 +108,7 @@ Section 2: Queries
     "error_code" : the error code of the request
     "result"     : {
                         "todo" : todo model if the todo exists, null otherwise
+                        "location" : location model if the location exists for this todo, null otherwise
 		   }
 }
 

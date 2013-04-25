@@ -15,7 +15,8 @@
 	                    FROM Todo NATURAL JOIN Has WHERE ToDoID = ?';
 	 
 	 	
-		$locationQuery = 'SELECT Latitude as lat,
+		$locationQuery = 'SELECT LocationID as lid,
+						Latitude as lat,
 						Longitude as lon,
 						Street_Address as address,
 						City as city,
@@ -54,7 +55,6 @@
 		  $result = $stmt->get_result();
 		  
 		  $row = $result->fetch_assoc();
-		  if(isset($row))
 		  	 $output['result']['location'] = $row;
 
 		  echo json_encode($output);

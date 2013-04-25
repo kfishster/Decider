@@ -56,8 +56,7 @@ Section 1: Models
 {
     "lid"           : unique location id
     "title"         : the title of the location
-    "street"        : the street of the location
-    "street_number" : the number of the street
+    "address"       : the street address of the location
     "city"          : the city the location is in
     "state"         : the state the location is in
     "lat"           : the latitude of the location - optional, null if not found
