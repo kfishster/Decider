@@ -8,7 +8,7 @@
 	  	$tdid = $_GET['tdid'];
  
 	  	$checkLoc = 'SELECT * FROM isLocated WHERE TodoID = ?';
-	  	$stmt = $mysqli->prepare($query);
+	  	$stmt = $mysqli->prepare($checkLoc);
 	 	$stmt->bind_param('s', $tdid);
 	 	$stmt->execute();
 
