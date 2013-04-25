@@ -1,5 +1,6 @@
 <?php
 
+include('dataManipulation.php');
 $lid = $_GET['lid'];
 	   
 	 	$query = 'SELECT  
