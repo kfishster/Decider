@@ -7,7 +7,7 @@ $lid = $_GET['lid'];
 	                Street_Address AS address, 
 	                City AS city,
 	                State AS state,
-	                Longitutude AS lon,
+	                Longitude AS lon,
 	                Latitude AS lat
 	                FROM Location WHERE LocationID = ?;';  
 
