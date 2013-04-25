@@ -15,12 +15,12 @@
 	                    FROM Todo NATURAL JOIN Has WHERE ToDoID = ?';
 	 
 	 	
-		$locationquery = 'SELECT Latitude as lat,
+		$locationQuery = 'SELECT Latitude as lat,
 						Longitude as lon,
 						Street_Address as address,
 						City as city,
 						State as state,
-						Title as location_title
+						Title as title
 						FROM isLocated Natural JOIN Location WHERE TodoID = ?';
 
 		global $mysqli;
