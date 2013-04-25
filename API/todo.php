@@ -24,7 +24,7 @@
 	                    Description as description,
 	                    Todo.Title as title,
 	                    Points as pts,
-						Latitude as lan,
+						Latitude as lat,
 						Longitude as lon,
 						Street_Address as address,
 						City as city,
