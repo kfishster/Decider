@@ -9,7 +9,7 @@ $lid = $_GET['lid'];
 	                State AS state,
 	                Longitutude AS lon,
 	                Latitude AS lat
-	                FROM Event WHERE LocationID = ?;';  
+	                FROM Location WHERE LocationID = ?;';  
 
 
 		global $mysqli;
