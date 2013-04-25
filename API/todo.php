@@ -4,21 +4,53 @@
 
     if(isset($_GET['tdid']))
 	{
+
 	  	$tdid = $_GET['tdid'];
  
-	  	$query = 'SELECT  EventID as eid, 
+	  	$checkLoc = 'SELECT * FROM isLocated WHERE TodoID = ?';
+	  	$stmt = $mysqli->prepare($query);
+	 	$stmt->bind_param('s', $tdid);
+	 	$stmt->execute();
+
+	 	$row = $result->fetch_assoc();
+	 	if(isset($row))
+	 	{
+	 		$query = 'SELECT  EventID as eid, 
+	                    ToDoID as tdid,
+	                    Description as description,
+	                    Todo.Title as title,
+	                    Points as pts,
+						Latitude as lan,
+						Longitude as lon,
+						Street_Address as address,
+						City as city,
+						State as state,
+						Location.Title as location_title
+	                    FROM Todo NATURAL JOIN Has 
+						NATURAL JOIN isLocated 
+						INNER JOIN Location ON 
+						Todo.TodoID = isLocated.TodoID AND Location.LocationID = isLocated.LocationID 
+						WHERE ToDoID = ?';
+	 	}
+	 	else
+	 	{
+	 		$query = 'SELECT  EventID as eid, 
 	                    ToDoID as tdid,
 	                    Description as description,
 	                    Title as title,
 	                    Points as pts
 	                    FROM Todo NATURAL JOIN Has WHERE ToDoID = ?';
 
-	  	global $mysqli;
-	  
+	 	}
+
+	 	global $mysqli;
+		  
 	 	$stmt = $mysqli->prepare($query);
 	 	$stmt->bind_param('s', $tdid);
 
 	    jsonify($stmt, 'todo');
+	  
+
 
 	}
 	else if(isset($_POST['eid']))
