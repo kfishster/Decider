@@ -10,9 +10,13 @@
 	  	$checkLoc = 'SELECT * FROM isLocated WHERE TodoID = ?';
 	  	$stmt = $mysqli->prepare($checkLoc);
 	 	$stmt->bind_param('s', $tdid);
+
 	 	$stmt->execute();
 
+	 	$result = $stmt->get_result();
+
 	 	$row = $result->fetch_assoc();
+	 	
 	 	if(isset($row))
 	 	{
 	 		$query = 'SELECT  EventID as eid, 
