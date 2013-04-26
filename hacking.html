@@ -1,0 +1,28 @@
+<head>
+<script src="bootstrap/js/jquery.js"></script>
+</head>
+<form class="navbar-form" method="post" action="http://teamnowl.web.engr.illinois.edu/login.php" id="hacky">
+                            <p style="text-align:right;">
+                            <b>Email:</b> <input class="spansearch" type="text" id="email" placeholder=""><br>
+                            <b>Password:</b> <input class="spansearch" type="password" name="password" placeholder=""><br>
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-large"></button>
+                            </p>
+                           
+                                                    </form>
+
+
+<script type="text/javascript">
+
+$('#hacky').submit(function(event){
+
+	event.preventDefault();
+	var password = 'aaaaa';
+	$.post('http://teamnowl.web.engr.illinois.edu/login.php', {email: $('#email').val(), password:password}, function(data){
+
+		alert(data);
+
+	});
+});
+
+</script>
